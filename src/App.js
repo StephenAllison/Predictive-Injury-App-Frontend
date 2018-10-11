@@ -9,6 +9,10 @@ import AthleteList from "./components/AthleteList";
 // import Navbar from "./components/Navbar";
 import AthleteDetails from "./components/AthleteFullDetails";
 import AddAthlete from "./components/AddAthlete";
+import AddUser from "./components/AddUser";
+import EditAthlete from "./components/EditAthlete";
+import EditUser from "./components/EditUser";
+import UserList from "./components/UserList";
 
 import { Switch, Route } from "react-router-dom";
 class App extends Component {
@@ -50,17 +54,35 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/"
-            render={() => <Login setTheUserInTheAppComponent={this.logMeIn} />}
+            path="/login"
+            render={props => (
+              <Login {...props} setTheUserInTheAppComponent={this.logMeIn} />
+            )}
           />
           <Route
             exact
             path="/signup"
-            render={() => <Signup setTheUserInTheAppComponent={this.logMeIn} />}
+            render={props => (
+              <Signup {...props} setTheUserInTheAppComponent={this.logMeIn} />
+            )}
           />
-          <Route exact path="/athletes" component={AthleteList} />
+          <Route
+            exact
+            path="/athletes"
+            render={props => (
+              <AthleteList {...props} theUser={this.state.loggedInUser} />
+            )}
+          />
           <Route exact path="/athletes/:id" component={AthleteDetails} />
           <Route exact path="/createNewAthlete" component={AddAthlete} />
+          <Route exact path="/createNewUser" component={AddUser} />
+          <Route
+            exact
+            path="/updateAthleteProfile/:id"
+            component={EditAthlete}
+          />
+          <Route exact path="//user/:id" component={EditUser} />
+          <Route exact path="/users" component={UserList} />
         </Switch>
       </div>
     );

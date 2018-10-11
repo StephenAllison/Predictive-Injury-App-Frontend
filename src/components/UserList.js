@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import AddUser from "./AddUser";
 
 class UserList extends Component {
   constructor() {
@@ -37,7 +38,7 @@ class UserList extends Component {
             this.state.listOfUsers.map((user, index) => {
               return (
                 <div key={user._id}>
-                  <Link to={`/users/${users._id}`}>
+                  <Link to={`/users/${user._id}`}>
                     <img src={user.imgPath} />
                     <h3>{user.sport}</h3>
                     <h4>{user.league}</h4>
@@ -52,7 +53,7 @@ class UserList extends Component {
             })}
         </div>
         <div>
-          <AddAthlete getData={() => this.getUsers()} />
+          <AddUser getData={() => this.getUsers()} />
         </div>
       </div>
     );

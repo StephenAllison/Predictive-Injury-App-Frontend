@@ -35,7 +35,7 @@ class EditUser extends Component {
     event.preventDefault();
 
     axios
-      .put(`http://localhost:5000/api/users/${this.props.theAtlete._id}`)
+      .put(`http://localhost:5000/api/users/${this.props.theUser._id}`)
       .then(() => {
         this.props.getTheUser();
         // after submitting the form, redirect to '/users'

@@ -62,7 +62,7 @@ class EditAthlete extends Component {
     event.preventDefault();
 
     axios
-      .put(`http://localhost:5000/api/athlets/${this.props.theAtlete._id}`)
+      .put(`http://localhost:5000/api/athletes/${this.props.theAtlete._id}`)
       .then(() => {
         this.props.getTheAthlete();
         // after submitting the form, redirect to '/athletes'

@@ -57,6 +57,7 @@ class Signup extends Component {
           // img: ""
         });
         this.props.setTheUserInTheAppComponent(theUserObject);
+        this.props.history.push("/login");
         // console.log("++++++++++theUserObject++++++++", req.body);
       })
       .catch(error => console.log(error));
