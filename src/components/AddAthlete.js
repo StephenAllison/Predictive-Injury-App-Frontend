@@ -129,12 +129,6 @@ class CreateNewAthlete extends Component {
             value={this.state.team}
             onChange={e => this.handleChange(e)}
           />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChange(e)}
-          />
           <label>Name:</label>
           <textarea
             name="name"
@@ -145,6 +139,12 @@ class CreateNewAthlete extends Component {
           <textarea
             name="position"
             value={this.state.position}
+            onChange={e => this.handleChange(e)}
+          />
+          <label>Current Injury Status:</label>
+          <textarea
+            name="currentInjuryStatus"
+            value={this.state.currentInjuryStatus}
             onChange={e => this.handleChange(e)}
           />
           <label>Physiological Mediating Factor Score:</label>
@@ -189,6 +189,7 @@ class CreateNewAthlete extends Component {
             value={this.state.riskLevel}
             onChange={e => this.handleChange(e)}
           />
+          <label>coachingDecision:</label>
           <textarea
             name="coachingDecision"
             value={this.state.coachingDecision}

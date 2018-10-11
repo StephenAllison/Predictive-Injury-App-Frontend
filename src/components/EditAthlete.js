@@ -85,17 +85,17 @@ class EditAthlete extends Component {
     });
   };
 
-  handleChangeSport = event => {
-    this.setState({
-      description: event.target.value
-    });
-  };
+  //   handleChangeSport = event => {
+  //     this.setState({
+  //       description: event.target.value
+  //     });
+  //   };
 
-  handleChangeLeague = event => {
-    this.setState({
-      league: event.target.value
-    });
-  };
+  //   handleChangeLeague = event => {
+  //     this.setState({
+  //       league: event.target.value
+  //     });
+  //   };
 
   handleChangeTeam = event => {
     this.setState({

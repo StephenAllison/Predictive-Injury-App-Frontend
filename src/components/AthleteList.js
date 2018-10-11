@@ -56,41 +56,41 @@ class AthleteList extends Component {
       </div>
     );
   }
-  //Medical Staff View
-  render() {
-    return (
-      <div>
-        <div style>
-          {this.state.listOfAthletes.map((athlete, index) => {
-            return (
-              <div key={athlete._id}>
-                <Link to={`/athletes/${athlete._id}`}>
-                  <h3>{athlete.imgPath}</h3>
-                  <h3>{athlete.Team}</h3>
-                  <h4>{athlete.name}</h4>
-                  <h4>{athlete.position}</h4>
-                  <h5>{athlete.currentInjuryStatus}</h5>
-                  <h5>{athlete.physicalMediatingFactorScore}</h5>
-                  <h5>{athlete.psychologicalMediatingFactorScore}</h5>
-                  <h5>{athlete.socialMediatingFactorScore}</h5>
-                  <h5>{athlete.physicalModeratingFactorScore}</h5>
-                  <h5>{athlete.psychologicalModeratingFactorScore}</h5>
-                  <h5>{athlete.socialModeratingFactorScore}</h5>
-                  <h5>{athlete.injuryRiskScore}</h5>
-                  <h5>{athlete.riskLevel}</h5>
-                  <h5>{athlete.coachingDecision}</h5>
-                </Link>
-                {/* <p style={{ maxWidth: "400px" }}>{athlete.description} </p> */}
-              </div>
-            );
-          })}
-        </div>
-        <div>
-          <AddAthlete getData={() => this.getAllAthletes()} />
-        </div>
-      </div>
-    );
-  }
+  // //Medical Staff View
+  // render() {
+  //   return (
+  //     <div>
+  //       <div style>
+  //         {this.state.listOfAthletes.map((athlete, index) => {
+  //           return (
+  //             <div key={athlete._id}>
+  //               <Link to={`/athletes/${athlete._id}`}>
+  //                 <h3>{athlete.imgPath}</h3>
+  //                 <h3>{athlete.Team}</h3>
+  //                 <h4>{athlete.name}</h4>
+  //                 <h4>{athlete.position}</h4>
+  //                 <h5>{athlete.currentInjuryStatus}</h5>
+  //                 <h5>{athlete.physicalMediatingFactorScore}</h5>
+  //                 <h5>{athlete.psychologicalMediatingFactorScore}</h5>
+  //                 <h5>{athlete.socialMediatingFactorScore}</h5>
+  //                 <h5>{athlete.physicalModeratingFactorScore}</h5>
+  //                 <h5>{athlete.psychologicalModeratingFactorScore}</h5>
+  //                 <h5>{athlete.socialModeratingFactorScore}</h5>
+  //                 <h5>{athlete.injuryRiskScore}</h5>
+  //                 <h5>{athlete.riskLevel}</h5>
+  //                 <h5>{athlete.coachingDecision}</h5>
+  //               </Link>
+  //               {/* <p style={{ maxWidth: "400px" }}>{athlete.description} </p> */}
+  //             </div>
+  //           );
+  //         })}
+  //       </div>
+  //       <div>
+  //         <AddAthlete getData={() => this.getAllAthletes()} />
+  //       </div>
+  //     </div>
+  //   );
+  // }
 }
 
 export default AthleteList;
