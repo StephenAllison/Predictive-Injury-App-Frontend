@@ -166,123 +166,101 @@ class EditAthlete extends Component {
         <hr />
         <h3>Edit form</h3>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Title:</label>
+          <label>Image:</label>
           <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
+            type="url"
+            name="imgPath"
+            value={this.state.imgPath}
+            onChange={e => this.handleChangeImgPath(e)}
           />
-          <label>Description:</label>
+          <label>Sport:</label>
           <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
+            name="sport"
+            value={this.state.sport}
+            onChange={e => this.handleChangeSport(e)}
           />
 
-          <label>Title:</label>
+          <label>League:</label>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
+            name="league"
+            value={this.state.league}
+            onChange={e => this.handleChangeLeague(e)}
           />
-          <label>Description:</label>
+          <label>Team:</label>
+          <textarea
+            name="team"
+            value={this.state.team}
+            onChange={e => this.handleChangeTeam(e)}
+          />
+          <label>Name:</label>
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={e => this.handleChangeName(e)}
+          />
+          <label>Injury Status:</label>
+          <textarea
+            name="injuryStatus"
+            value={this.state.injuryStatus}
+            onChange={e => this.handleChangeInjuryStatus(e)}
+          />
+          <label>Physiological Mediating Factor Score:</label>
+          <input
+            type="text"
+            name="physicalMediatingFactorScore"
+            value={this.state.physicalMediatingFactorScore}
+            onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
+          />
+          <label>Psychological Mediating Factor Score:</label>
+          <textarea
+            name="psychologicalMediatingFactorScore"
+            value={this.state.psychologicalMediatingFactorScore}
+            onChange={e =>
+              this.handleChangePsychologicalMediatingFactorScore(e)
+            }
+          />
+          <label>Sociological MediatingFactor Score:</label>
+          <input
+            type="text"
+            name="socialMediatingFactorScore"
+            value={this.state.socialMediatingFactorScore}
+            onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
+          />
+          <label>Physiological Moderating Factor Score:</label>
           <textarea
             name="description"
             value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
+            onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
           />
-          <label>Title:</label>
+          <label>Psychological Moderating Factor Score:</label>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
+            name="psychologicalModeratingFactorScore"
+            value={this.state.psychologicalModeratingFactorScore}
+            onChange={e =>
+              this.handleChangePsychologicalModeratingFactorScore(e)
+            }
           />
-          <label>Description:</label>
+          <label>Sociological Moderating Factor Score:</label>
           <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
+            name="SocialModeratingFactorScore"
+            value={this.state.SocialModeratingFactorScore}
+            onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
           />
-          <label>Title:</label>
+          <label>Injury Risk Score:</label>
           <input
             type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
+            name="injuryRiskScore"
+            value={this.state.injuryRiskScore}
+            onChange={e => this.handleChangeInjuryRiskScore(e)}
           />
-          <label>Description:</label>
+          <label>Coaching Decision:</label>
           <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
-          />
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
-          />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
-          />
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
-          />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
-          />
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
-          />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
-          />
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
-          />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
-          />
-          <label>Title:</label>
-          <input
-            type="text"
-            name="title"
-            value={this.state.title}
-            onChange={e => this.handleChangeTitle(e)}
-          />
-          <label>Description:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangeDesc(e)}
+            name="coachingDecision"
+            value={this.state.coachingDecision}
+            onChange={e => this.handleChangeCoachingDecision(e)}
           />
 
           <input type="submit" value="Submit" />
