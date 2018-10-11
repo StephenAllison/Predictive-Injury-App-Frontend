@@ -64,7 +64,8 @@ class CreateNewAthlete extends Component {
         psychologicalModeratingFactorScore,
         socialModeratingFactorScore,
         injuryRiskScore,
-        riskLevel
+        riskLevel,
+        coachingDecision
       })
       .then(() => {
         this.props.getData();
@@ -82,7 +83,8 @@ class CreateNewAthlete extends Component {
           psychologicalModeratingFactorScore: "",
           socialModeratingFactorScore: "",
           injuryRiskScore: "",
-          riskLevel: ""
+          riskLevel: "",
+          coachingDecision: ""
         });
       })
       .catch(error => console.log(error));
@@ -184,6 +186,11 @@ class CreateNewAthlete extends Component {
           <textarea
             name="riskLevel"
             value={this.state.riskLevel}
+            onChange={e => this.handleChange(e)}
+          />
+          <textarea
+            name="coachingDecision"
+            value={this.state.coachingDecision}
             onChange={e => this.handleChange(e)}
           />
 
