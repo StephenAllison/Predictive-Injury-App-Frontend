@@ -44,8 +44,6 @@ class UserList extends Component {
                     <h4>{user.staffingDivision}</h4>
                     <h5>{user.role}</h5>
                     <h5>{user.name}</h5>
-                    <h5>{user.username}</h5>
-                    <h5>{user.password}</h5>
                   </Link>
                   <p style={{ maxWidth: "400px" }}>{user.description} </p>
                 </div>

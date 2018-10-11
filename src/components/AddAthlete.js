@@ -139,91 +139,104 @@ class CreateNewAthlete extends Component {
             name="imgPath"
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Sport:</label>
           <textarea
             name="sport"
             value={this.state.sport}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>League:</label>
           <textarea
             name="league"
             value={this.state.league}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Team:</label>
           <textarea
             name="team"
             value={this.state.team}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Name:</label>
           <textarea
             name="name"
             value={this.state.name}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Position:</label>
           <textarea
             name="position"
             value={this.state.position}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Current Injury Status:</label>
           <textarea
             name="currentInjuryStatus"
             value={this.state.currentInjuryStatus}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Physiological Mediating Factor Score:</label>
           <textarea
             name="physicalMediatingFactorScore"
             value={this.state.physicalMediatingFactorScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Psychological Mediating Factor Score:</label>
           <textarea
             name="psychologicalMediatingFactorScore"
             value={this.state.psychologicalMediatingFactorScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Sociological Mediating Factor Score:</label>
           <textarea
             name="socialMediatingFactorScore"
             value={this.state.socialMediatingFactorScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Physiological Moderating Factor Score:</label>
           <textarea
             name="physicalModeratingFactorScore"
             value={this.state.physicalModeratingFactorScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>psychologicalModeratingFactorScore:</label>
           <textarea
             name="psychologicalModeratingFactorScore"
             value={this.state.psychologicalModeratingFactorScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Injury Risk Score:</label>
           <textarea
             name="injuryRiskScore"
             value={this.state.injuryRiskScore}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>Risk Level:</label>
           <textarea
             name="riskLevel"
             value={this.state.riskLevel}
             onChange={e => this.handleChange(e)}
           />
+          <br />
           <label>coachingDecision:</label>
           <textarea
             name="coachingDecision"
             value={this.state.coachingDecision}
             onChange={e => this.handleChange(e)}
           />
-
           <input type="submit" value="Submit" />
         </form>
       </div>
