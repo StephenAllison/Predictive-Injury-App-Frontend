@@ -27,6 +27,15 @@ class EditAthlete extends Component {
       riskLevel: this.props.theAthlete.riskLevel
     };
   }
+  handleChange = e => {
+    switch (e.target.name) {
+      case "imgPath":
+        this.setState({ imgPath: e.target.files[0] });
+        break;
+      default:
+        this.setState({ [e.target.name]: e.target.value });
+    }
+  };
 
   handleFormSubmit = event => {
     const imgPath = this.state.imgPath;
@@ -253,14 +262,5 @@ class EditAthlete extends Component {
     );
   }
 }
-onChange = e => {
-  switch (e.target.name) {
-    case "imgPath":
-      this.setState({ imgPath: e.target.files[0] });
-      break;
-    default:
-      this.setState({ [e.target.name]: e.target.value });
-  }
-};
 
 export default EditAthlete;
