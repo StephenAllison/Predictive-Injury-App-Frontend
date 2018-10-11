@@ -48,6 +48,7 @@ class EditAthlete extends Component {
     const socialModeratingFactorScore = this.state.socialModeratingFactorScore;
     const injuryRiskScore = this.state.injuryRiskScore;
     const riskLevel = this.state.riskLevel;
+    const coachingDecision = this.state.coachingDecision;
 
     event.preventDefault();
 

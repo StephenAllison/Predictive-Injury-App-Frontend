@@ -55,7 +55,7 @@ class AthleteList extends Component {
           })}
         </div>
         <div>
-          <createNewAthlete getData={() => this.getAllAthletes()} />
+          <AddAthlete getData={() => this.getAllAthletes()} />
         </div>
       </div>
     );

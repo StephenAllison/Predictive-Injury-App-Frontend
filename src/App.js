@@ -6,7 +6,7 @@ import Login from "./components/Login";
 // import axios from "axios";
 import AuthService from "./components/auth/auth-service";
 import AthleteList from "./components/AthleteList";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import AthleteDetails from "./components/AthleteFullDetails";
 
 import { Switch, Route } from "react-router-dom";
@@ -42,10 +42,10 @@ class App extends Component {
     this.fetchUser();
     return (
       <div className="App">
-        <Navbar
+        {/* <Navbar
           setTheUserInTheAppComponent={this.logMeIn}
           userInSession={this.state.loggedInUser}
-        />
+        /> */}
         <Switch>
           <Route
             exact

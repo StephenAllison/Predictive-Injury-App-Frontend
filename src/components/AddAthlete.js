@@ -47,6 +47,7 @@ class CreateNewAthlete extends Component {
     const socialModeratingFactorScore = this.state.socialModeratingFactorScore;
     const injuryRiskScore = this.state.injuryRiskScore;
     const riskLevel = this.state.riskLevel;
+    const coachingDecision = this.state.coachingDecision;
 
     axios
       .post("http://localhost:3000/api/createnewathletes", {
