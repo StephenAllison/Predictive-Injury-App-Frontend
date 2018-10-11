@@ -7,7 +7,7 @@ class CreateNewUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      img: " ",
+      imgPath: " ",
       sport: " ",
       league: " ",
       team: " ",
@@ -37,18 +37,11 @@ class CreateNewUser extends Component {
       sport,
       league,
       team,
+      staffingDivision,
+      role,
       name,
-      position,
-      injuryStatus,
-      physicalMediatingFactorScore,
-      psychologicalMediatingFactorScore,
-      socialMediatingFactorScore,
-      physicalModeratingFactorScore,
-      psychologicalModeratingFactorScore,
-      socialModeratingFactorScore,
-      injuryRiskScore,
-      riskLevel,
-      coachingDecision
+      username,
+      password
     } = this.state;
     formData.append("imgPath", imgPath);
 
@@ -58,61 +51,29 @@ class CreateNewUser extends Component {
 
     formData.append("team", team);
 
+    formData.append("staffingDivision", staffingDivision);
+
+    formData.append("role", role);
+
     formData.append("name", name);
 
-    formData.append("position", position);
+    formData.append("username", username);
 
-    formData.append("injuryStatus", injuryStatus);
-
-    formData.append(
-      "physicalMediatingFactorScore",
-      physicalMediatingFactorScore
-    );
-
-    formData.append(
-      "psychologicalMediatingFactorScore",
-      psychologicalMediatingFactorScore
-    );
-
-    formData.append("socialMediatingFactorScore", socialMediatingFactorScore);
-
-    formData.append(
-      "physicalModeratingFactorScore",
-      physicalModeratingFactorScore
-    );
-
-    formData.append(
-      "psychologicalModeratingFactorScore",
-      psychologicalModeratingFactorScore
-    );
-
-    formData.append("socialModeratingFactorScore", socialModeratingFactorScore);
-
-    formData.append("injuryRiskScore", injuryRiskScore);
-
-    formData.append("riskLevel", riskLevel);
-
-    formData.append("coachingDecision", coachingDecision);
+    formData.append("password", password);
 
     axios
       .post("http://localhost:5000/api/createNewUser", formData)
       .then(() => {
         this.setState({
-          imgPath: "",
-          sport: "",
-          league: "",
-          team: "",
-          name: "",
-          position: "",
-          physicalMediatingFactorScore: "",
-          psychologicalMediatingFactorScore: "",
-          socialMediatingFactorScore: "",
-          physicalModeratingFactorScore: "",
-          psychologicalModeratingFactorScore: "",
-          socialModeratingFactorScore: "",
-          injuryRiskScore: "",
-          riskLevel: "",
-          coachingDecision: ""
+          imgPath: " ",
+          sport: " ",
+          league: " ",
+          team: " ",
+          staffingDivision: " ",
+          role: " ",
+          name: " ",
+          username: " ",
+          password: " "
         });
       })
       .catch(error => console.log(error));
@@ -144,10 +105,16 @@ class CreateNewUser extends Component {
             value={this.state.league}
             onChange={e => this.handleChange(e)}
           />
-          <label>Team:</label>
+          <label>Staffing Division:</label>
           <textarea
-            name="team"
-            value={this.state.team}
+            name="staffingDivision"
+            value={this.state.staffingDivision}
+            onChange={e => this.handleChange(e)}
+          />
+          <label>Role:</label>
+          <textarea
+            name="role"
+            value={this.state.role}
             onChange={e => this.handleChange(e)}
           />
           <label>Name:</label>
@@ -156,67 +123,18 @@ class CreateNewUser extends Component {
             value={this.state.name}
             onChange={e => this.handleChange(e)}
           />
-          <label>Position:</label>
+          <label>Username:</label>
           <textarea
-            name="position"
-            value={this.state.position}
+            name="username"
+            value={this.state.username}
             onChange={e => this.handleChange(e)}
           />
-          <label>Current Injury Status:</label>
+          <label>Password:</label>
           <textarea
-            name="currentInjuryStatus"
-            value={this.state.currentInjuryStatus}
+            name="password"
+            value={this.state.password}
             onChange={e => this.handleChange(e)}
           />
-          <label>Physiological Mediating Factor Score:</label>
-          <textarea
-            name="physicalMediatingFactorScore"
-            value={this.state.physicalMediatingFactorScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>Psychological Mediating Factor Score:</label>
-          <textarea
-            name="psychologicalMediatingFactorScore"
-            value={this.state.psychologicalMediatingFactorScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>Sociological Mediating Factor Score:</label>
-          <textarea
-            name="socialMediatingFactorScore"
-            value={this.state.socialMediatingFactorScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>Physiological Moderating Factor Score:</label>
-          <textarea
-            name="physicalModeratingFactorScore"
-            value={this.state.physicalModeratingFactorScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>psychologicalModeratingFactorScore:</label>
-          <textarea
-            name="psychologicalModeratingFactorScore"
-            value={this.state.psychologicalModeratingFactorScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>Injury Risk Score:</label>
-          <textarea
-            name="injuryRiskScore"
-            value={this.state.injuryRiskScore}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>Risk Level:</label>
-          <textarea
-            name="riskLevel"
-            value={this.state.riskLevel}
-            onChange={e => this.handleChange(e)}
-          />
-          <label>coachingDecision:</label>
-          <textarea
-            name="coachingDecision"
-            value={this.state.coachingDecision}
-            onChange={e => this.handleChange(e)}
-          />
-
           <input type="submit" value="Submit" />
         </form>
       </div>
