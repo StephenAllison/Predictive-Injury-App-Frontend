@@ -40,6 +40,7 @@ class UserList extends Component {
                   <Link to={`/users/${users._id}`}>
                     <img src={user.imgPath} />
                     <h3>{user.sport}</h3>
+                    <h4>{user.league}</h4>
                     <h4>{user.team}</h4>
                     <h4>{user.staffingDivision}</h4>
                     <h5>{user.role}</h5>

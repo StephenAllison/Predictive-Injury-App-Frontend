@@ -5,13 +5,13 @@ class EditUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imgPath: this.props.theAthlete.imgPath,
-      sport: this.props.theAthlete.sport,
-      league: this.props.theAthlete.title,
-      team: this.props.theAthlete.team,
-      staffingDivision: this.props.theAthlete.staffingDivision,
-      role: this.props.theAthlete.role,
-      name: this.props.theAthlete.name
+      imgPath: this.props.theUser.imgPath,
+      sport: this.props.theUser.sport,
+      league: this.props.theUser.title,
+      team: this.props.theUser.team,
+      staffingDivision: this.props.theUser.staffingDivision,
+      role: this.props.theUser.role,
+      name: this.props.theUser.name
     };
   }
   handleChange = e => {
@@ -29,31 +29,17 @@ class EditUser extends Component {
     const sport = this.state.sport;
     const league = this.state.league;
     const team = this.state.team;
+    const role = this.state.role;
     const name = this.state.name;
-    const position = this.state.position;
-    const injuryStatus = this.state.injuryStatus;
-    const physicalMediatingFactorScore = this.state
-      .physicalMediatingFactorScore;
-    const psychologicalMediatingFactorScore = this.state
-      .psychologicalMediatingFactorScore;
-    const socialMediatingFactorScore = this.state.socialMediatingFactorScore;
-    const physicalModeratingFactorScore = this.state
-      .physicalModeratingFactorScore;
-    const psychologicalModeratingFactorScore = this.state
-      .psychologicalModeratingFactorScore;
-    const socialModeratingFactorScore = this.state.socialModeratingFactorScore;
-    const injuryRiskScore = this.state.injuryRiskScore;
-    const riskLevel = this.state.riskLevel;
-    const coachingDecision = this.state.coachingDecision;
 
     event.preventDefault();
 
     axios
-      .put(`http://localhost:5000/api/athlets/${this.props.theAtlete._id}`)
+      .put(`http://localhost:5000/api/users/${this.props.theAtlete._id}`)
       .then(() => {
-        this.props.getTheAthlete();
-        // after submitting the form, redirect to '/athletes'
-        this.props.history.push("/athletes");
+        this.props.getTheUser();
+        // after submitting the form, redirect to '/users'
+        this.props.history.push("/users");
       })
       .catch(error => console.log(error));
   };
@@ -76,67 +62,31 @@ class EditUser extends Component {
   //     });
   //   };
 
+  handleChangeSport = event => {
+    this.setState({
+      sport: event.target.value
+    });
+  };
+
+  handleChangeLeague = event => {
+    this.setState({
+      league: event.target.value
+    });
+  };
   handleChangeTeam = event => {
     this.setState({
       team: event.target.value
+    });
+  };
+  handleChangeRole = event => {
+    this.setState({
+      role: event.target.value
     });
   };
 
   handleChangeName = event => {
     this.setState({
       name: event.target.value
-    });
-  };
-  handleChangeInjuryStatus = event => {
-    this.setState({
-      injuryStatus: event.target.value
-    });
-  };
-  handleChangePhysicalMediatingFactorScore = event => {
-    this.setState({
-      physicalMediatingFactorScore: event.target.value
-    });
-  };
-
-  handleChangePsychologicalMediatingFactorScore = event => {
-    this.setState({
-      psychologicalMediatingFactorScore: event.target.value
-    });
-  };
-
-  handleChangeSocialMediatingFactorScore = event => {
-    this.setState({
-      socialMediatingFactorScore: event.target.value
-    });
-  };
-
-  handleChangePhysicalModeratingFactorScore = event => {
-    this.setState({
-      physicalModeratingFactorScore: event.target.value
-    });
-  };
-
-  handleChangePsychologicalModeratingFactorScore = event => {
-    this.setState({
-      psychologicalModeratingFactorScore: event.target.value
-    });
-  };
-
-  handleChangeSocialModeratingFactorScore = event => {
-    this.setState({
-      socialModeratingFactorScore: event.target.value
-    });
-  };
-
-  handleChangeInjuryRiskScore = event => {
-    this.setState({
-      injuryRiskScore: event.target.value
-    });
-  };
-
-  handleChangeCoachingDecision = event => {
-    this.setState({
-      coachingDecision: event.target.value
     });
   };
 
@@ -180,69 +130,12 @@ class EditUser extends Component {
             value={this.state.name}
             onChange={e => this.handleChangeName(e)}
           />
-          <label>Injury Status:</label>
+          <label>Role</label>
           <textarea
-            name="injuryStatus"
+            name="role"
             value={this.state.injuryStatus}
-            onChange={e => this.handleChangeInjuryStatus(e)}
+            onChange={e => this.handleChangeRole(e)}
           />
-          <label>Physiological Mediating Factor Score:</label>
-          <input
-            type="text"
-            name="physicalMediatingFactorScore"
-            value={this.state.physicalMediatingFactorScore}
-            onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
-          />
-          <label>Psychological Mediating Factor Score:</label>
-          <textarea
-            name="psychologicalMediatingFactorScore"
-            value={this.state.psychologicalMediatingFactorScore}
-            onChange={e =>
-              this.handleChangePsychologicalMediatingFactorScore(e)
-            }
-          />
-          <label>Sociological MediatingFactor Score:</label>
-          <input
-            type="text"
-            name="socialMediatingFactorScore"
-            value={this.state.socialMediatingFactorScore}
-            onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
-          />
-          <label>Physiological Moderating Factor Score:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
-          />
-          <label>Psychological Moderating Factor Score:</label>
-          <input
-            type="text"
-            name="psychologicalModeratingFactorScore"
-            value={this.state.psychologicalModeratingFactorScore}
-            onChange={e =>
-              this.handleChangePsychologicalModeratingFactorScore(e)
-            }
-          />
-          <label>Sociological Moderating Factor Score:</label>
-          <textarea
-            name="SocialModeratingFactorScore"
-            value={this.state.SocialModeratingFactorScore}
-            onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
-          />
-          <label>Injury Risk Score:</label>
-          <input
-            type="text"
-            name="injuryRiskScore"
-            value={this.state.injuryRiskScore}
-            onChange={e => this.handleChangeInjuryRiskScore(e)}
-          />
-          <label>Coaching Decision:</label>
-          <textarea
-            name="coachingDecision"
-            value={this.state.coachingDecision}
-            onChange={e => this.handleChangeCoachingDecision(e)}
-          />
-
           <input type="submit" value="Submit" />
         </form>
       </div>
