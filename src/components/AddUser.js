@@ -1,28 +1,21 @@
-// components/athlete/CreateNewAthlete.js
+// components/athlete/CreateNewUser.js
 
 import React, { Component } from "react";
 import axios from "axios";
 
-class CreateNewAthlete extends Component {
+class CreateNewUser extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imgPath: "",
-      sport: "",
-      league: "",
-      team: "",
-      name: "",
-      position: "",
-      injuryStatus: "",
-      physicalMediatingFactorScore: "",
-      psychologicalMediatingFactorScore: "",
-      socialMediatingFactorScore: "",
-      physicalModeratingFactorScore: "",
-      psychologicalModeratingFactorScore: "",
-      socialModeratingFactorScore: "",
-      injuryRiskScore: "",
-      riskLevel: "",
-      coachingDecision: ""
+      img: " ",
+      sport: " ",
+      league: " ",
+      team: " ",
+      staffingDivision: " ",
+      role: " ",
+      name: " ",
+      username: " ",
+      password: " "
     };
   }
 
@@ -102,7 +95,7 @@ class CreateNewAthlete extends Component {
     formData.append("coachingDecision", coachingDecision);
 
     axios
-      .post("http://localhost:5000/api/createNewAthlete", formData)
+      .post("http://localhost:5000/api/createNewUser", formData)
       .then(() => {
         this.setState({
           imgPath: "",
@@ -231,4 +224,4 @@ class CreateNewAthlete extends Component {
   }
 }
 
-export default CreateNewAthlete;
+export default CreateNewUser;

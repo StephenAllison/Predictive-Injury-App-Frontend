@@ -16,6 +16,8 @@ class AthleteList extends Component {
     axios
       .get("http://localhost:5000/api/athletes")
       .then(responseFromApi => {
+        console.log("=-=-=-=-=-=-=-=-=-=", responseFromApi);
+
         this.setState({
           listOfAthletes: responseFromApi.data
         });
@@ -32,23 +34,24 @@ class AthleteList extends Component {
   render() {
     return (
       <div>
-        <div style>
-          {this.state.listOfAthletes.map((athlete, index) => {
-            return (
-              <div key={athlete._id}>
-                <Link to={`/athletes/${athlete._id}`}>
-                  <h3>{athlete.imgPath}</h3>
-                  <h3>{athlete.Team}</h3>
-                  <h4>{athlete.name}</h4>
-                  <h4>{athlete.position}</h4>
-                  <h5>{athlete.injuryStatus}</h5>
-                  <h5>{athlete.riskLevel}</h5>
-                  <h5>{athlete.coachingDecision}</h5>
-                </Link>
-                <p style={{ maxWidth: "400px" }}>{athlete.description} </p>
-              </div>
-            );
-          })}
+        <div>
+          {this.state.listOfAthletes &&
+            this.state.listOfAthletes.map((athlete, index) => {
+              return (
+                <div key={athlete._id}>
+                  <Link to={`/athletes/${athlete._id}`}>
+                    <img src={athlete.imgPath} />
+                    <h3>{athlete.Team}</h3>
+                    <h4>{athlete.name}</h4>
+                    <h4>{athlete.position}</h4>
+                    <h5>{athlete.injuryStatus}</h5>
+                    <h5>{athlete.riskLevel}</h5>
+                    <h5>{athlete.coachingDecision}</h5>
+                  </Link>
+                  <p style={{ maxWidth: "400px" }}>{athlete.description} </p>
+                </div>
+              );
+            })}
         </div>
         <div>
           <AddAthlete getData={() => this.getAllAthletes()} />

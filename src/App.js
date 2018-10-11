@@ -8,6 +8,7 @@ import AuthService from "./components/auth/auth-service";
 import AthleteList from "./components/AthleteList";
 // import Navbar from "./components/Navbar";
 import AthleteDetails from "./components/AthleteFullDetails";
+import AddAthlete from "./components/AddAthlete";
 
 import { Switch, Route } from "react-router-dom";
 class App extends Component {
@@ -59,6 +60,7 @@ class App extends Component {
           />
           <Route exact path="/athletes" component={AthleteList} />
           <Route exact path="/athletes/:id" component={AthleteDetails} />
+          <Route exact path="/createNewAthlete" component={AddAthlete} />
         </Switch>
       </div>
     );
