@@ -7,22 +7,24 @@ class CreateNewAthlete extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imgPath: "",
-      sport: "",
-      league: "",
-      team: "",
-      name: "",
-      position: "",
-      injuryStatus: "",
-      physicalMediatingFactorScore: "",
-      psychologicalMediatingFactorScore: "",
-      socialMediatingFactorScore: "",
-      physicalModeratingFactorScore: "",
-      psychologicalModeratingFactorScore: "",
-      socialModeratingFactorScore: "",
-      injuryRiskScore: "",
-      medicalNote: "",
-      coachingDecision: ""
+      imgPath: " ",
+      sport: " ",
+      league: " ",
+      team: " ",
+      name: " ",
+      position: " ",
+      physicalMediatingFactorScore: " ",
+      psychologicalMediatingFactorScore: " ",
+      socialMediatingFactorScore: " ",
+      physicalModeratingFactorScore: " ",
+      psychologicalModeratingFactorScore: " ",
+      socialModeratingFactorScore: " ",
+      overallPhysiologicalHealth: " ",
+      overallPPsychologicalHealth: " ",
+      overallSociologicalHealth: " ",
+      injuryRiskScore: " ",
+      medicalNote: " ",
+      coachingDecision: " "
     };
   }
 
@@ -53,6 +55,9 @@ class CreateNewAthlete extends Component {
       physicalModeratingFactorScore,
       psychologicalModeratingFactorScore,
       socialModeratingFactorScore,
+      overallPhysiologicalHealth,
+      overallPsychologicalHealth,
+      overallSociologicalHealth,
       injuryRiskScore,
       medicalNote,
       coachingDecision
@@ -95,6 +100,12 @@ class CreateNewAthlete extends Component {
 
     formData.append("socialModeratingFactorScore", socialModeratingFactorScore);
 
+    formData.append("overallPhysiologicalHealth", overallPhysiologicalHealth);
+
+    formData.append("overallPsychologicalHealth", overallPsychologicalHealth);
+
+    formData.append("overallSociologicalHealth", overallSociologicalHealth);
+
     formData.append("injuryRiskScore", injuryRiskScore);
 
     formData.append("medicalNote", medicalNote);
@@ -105,21 +116,24 @@ class CreateNewAthlete extends Component {
       .post("http://localhost:5000/api/createNewAthlete", formData)
       .then(() => {
         this.setState({
-          imgPath: "",
-          sport: "",
-          league: "",
-          team: "",
-          name: "",
-          position: "",
-          physicalMediatingFactorScore: "",
-          psychologicalMediatingFactorScore: "",
-          socialMediatingFactorScore: "",
-          physicalModeratingFactorScore: "",
-          psychologicalModeratingFactorScore: "",
-          socialModeratingFactorScore: "",
-          injuryRiskScore: "",
-          medicalNote: "",
-          coachingDecision: ""
+          imgPath: " ",
+          sport: " ",
+          league: " ",
+          team: " ",
+          name: " ",
+          position: " ",
+          physicalMediatingFactorScore: " ",
+          psychologicalMediatingFactorScore: " ",
+          socialMediatingFactorScore: " ",
+          physicalModeratingFactorScore: " ",
+          psychologicalModeratingFactorScore: " ",
+          socialModeratingFactorScore: " ",
+          overallPhysiologicalHealth: " ",
+          overallPsychologicalHealth: " ",
+          overallSociologicalHealth: " ",
+          injuryRiskScore: " ",
+          medicalNote: " ",
+          coachingDecision: " "
         });
       })
       .catch(error => console.log(error));
@@ -235,6 +249,7 @@ class CreateNewAthlete extends Component {
           <br />
           <br />
           <label>Physiological Moderating Factor Score:</label>
+          <br />
           <textarea
             name="physicalModeratingFactorScore"
             value={this.state.physicalModeratingFactorScore}
@@ -243,7 +258,7 @@ class CreateNewAthlete extends Component {
           <br />
           <br />
           <br />
-          <label>psychologicalModeratingFactorScore:</label>
+          <label>Psychological Moderating Factor Score:</label>
           <br />
           <textarea
             name="psychologicalModeratingFactorScore"
@@ -253,16 +268,48 @@ class CreateNewAthlete extends Component {
           <br />
           <br />
           <br />
-          <label>psychologicalModeratingFactorScore:</label>
+          <label>Sociological Moderating FactorScore:</label>
           <br />
           <textarea
-            name="psychologicalModeratingFactorScore"
-            value={this.state.psychologicalModeratingFactorScore}
+            name="socialMediatingFactorScore"
+            value={this.state.socialMediatingFactorScore}
             onChange={e => this.handleChange(e)}
           />
-          <br /> <br />
+          <br />
+          <br />
+          <br />
+          <label>Overall Physiological Health:</label>
+          <br />
+          <textarea
+            name="overallPhysiologicalHealth"
+            value={this.state.overallPhysiologicalHealth}
+            onChange={e => this.handleChange(e)}
+          />
+          <br />
+          <br />
+          <br />
+          <label>Overall Psychological Health</label>
+          <br />
+          <textarea
+            name="overallPsychologicalHealth"
+            value={this.state.overallPsychologicalHealth}
+            onChange={e => this.handleChange(e)}
+          />
+          <br />
+          <br />
+          <br />
+          <label>Overall Sociological Health:</label>
+          <br />
+          <textarea
+            name="overallSociologicalHealth"
+            value={this.state.overallSociologicalHealth}
+            onChange={e => this.handleChange(e)}
+          />
+          <br />
+          <br />
           <br />
           <label>Injury Risk Score:</label>
+          <br />
           <textarea
             name="injuryRiskScore"
             value={this.state.injuryRiskScore}
@@ -281,7 +328,7 @@ class CreateNewAthlete extends Component {
           <br />
           <br />
           <br />
-          <label>coachingDecision:</label>
+          <label>Coaching Decision:</label>
           <br />
           <textarea
             name="coachingDecision"

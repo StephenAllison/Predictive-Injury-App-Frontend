@@ -87,7 +87,7 @@ class CreateNewUser extends Component {
     return (
       <div>
         <form onSubmit={this.handleFormSubmit}>
-          <label>Image</label>
+          <label>Image:</label>
           <input
             type="file"
             name="imgPath"
