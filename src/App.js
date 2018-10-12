@@ -80,15 +80,37 @@ class App extends Component {
               <EditAthlete {...props} theUser={this.state.loggedInUser} />
             )}
           />
-          <Route exact path="/athletes/:id" component={AthleteDetails} />
-          <Route exact path="/createNewAthlete" component={AddAthlete} />
-          <Route exact path="/createNewUser" component={AddUser} />
+          />
           <Route
             exact
-            path="/updateAthleteProfile/:id"
-            component={EditAthlete}
+            path="/createNewUser"
+            render={props => (
+              <AddUser {...props} theUser={this.state.loggedInUser} />
+            )}
           />
-          <Route exact path="//user/:id" component={EditUser} />
+          <Route
+            exact
+            path="/createNewAthlete"
+            render={props => (
+              <AddAthlete {...props} theUser={this.state.loggedInUser} />
+            )}
+          />
+          <Route
+            exact
+            path="/updateAthleteProfile"
+            render={props => (
+              <AddAthlete {...props} theUser={this.state.loggedInUser} />
+            )}
+          />
+          <Route
+            exact
+            path="/user/:id"
+            render={props => (
+              <EditUser {...props} theUser={this.state.loggedInUser} />
+            )}
+          />
+          {/* <Route exact path="/athletes/:id" component={AthleteDetails} /> */}
+          <Route exact path="/user/:id" component={EditUser} />
           <Route exact path="/users" component={UserList} />
         </Switch>
       </div>

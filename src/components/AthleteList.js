@@ -187,27 +187,6 @@ class AthleteList extends Component {
                             onChange={e => this.handleChange(e)}
                           />
                           <br />
-                          <label>Sport:</label>
-                          <textarea
-                            name="sport"
-                            value={this.state.sport}
-                            onChange={e => this.handleChange(e)}
-                          />
-                          <br />
-                          <label>League:</label>
-                          <textarea
-                            name="league"
-                            value={this.state.league}
-                            onChange={e => this.handleChange(e)}
-                          />
-                          <br />
-                          <label>Team:</label>
-                          <textarea
-                            name="team"
-                            value={this.state.team}
-                            onChange={e => this.handleChange(e)}
-                          />
-                          <br />
                           <label>Name:</label>
                           <textarea
                             name="name"
@@ -257,7 +236,16 @@ class AthleteList extends Component {
                             onChange={e => this.handleChange(e)}
                           />
                           <br />
-                          <label>psychologicalModeratingFactorScore:</label>
+                          <label>Psychological Moderating Factor Score:</label>
+                          <textarea
+                            name="psychologicalModeratingFactorScore"
+                            value={
+                              this.state.psychologicalModeratingFactorScore
+                            }
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Sociological Moderating Factor Score:</label>
                           <textarea
                             name="psychologicalModeratingFactorScore"
                             value={

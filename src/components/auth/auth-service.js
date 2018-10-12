@@ -12,6 +12,7 @@ class AuthService {
   }
 
   signup = (
+    imgPath,
     sport,
     league,
     team,
@@ -23,6 +24,7 @@ class AuthService {
   ) => {
     return this.service
       .post("/signup", {
+        imgPath,
         sport,
         league,
         team,

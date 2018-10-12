@@ -44,7 +44,7 @@ class EditAthlete extends Component {
     const team = this.state.team;
     const name = this.state.name;
     const position = this.state.position;
-    const injuryStatus = this.state.injuryStatus;
+    const currentInjuryStatus = this.state.currentInjuryStatus;
     const physicalMediatingFactorScore = this.state
       .physicalMediatingFactorScore;
     const psychologicalMediatingFactorScore = this.state
@@ -152,115 +152,339 @@ class EditAthlete extends Component {
       coachingDecision: event.target.value
     });
   };
-
+  
   render() {
+    if (this.props.theUser.staffingDivision === "Coaching Staff") {
     return (
-      <div>
-        <hr />
-        <h3>Edit form</h3>
-        <form onSubmit={this.handleFormSubmit}>
-          <label>Image:</label>
-          <input
-            type="file"
-            name="imgPath"
-            value={this.state.imgPath}
-            onChange={e => this.handleChangeImgPath(e)}
-          />
-          <label>Sport:</label>
-          <textarea
-            name="sport"
-            value={this.state.sport}
-            onChange={e => this.handleChangeSport(e)}
-          />
+    <div>
+      <hr />
+      <h3>Edit form</h3>
+      <form onSubmit={this.handleFormSubmit}>
+        <label>Image:</label>
+        <input
+          type="file"
+          name="imgPath"
+          value={this.state.imgPath}
+          onChange={e => this.handleChangeImgPath(e)}
+        />
+        {/* <label>Sport:</label>
+        <textarea
+          name="sport"
+          value={this.state.sport}
+          onChange={e => this.handleChangeSport(e)}
+        /> */}
+        <label>League:</label>
+        <input
+          type="text"
+          name="league"
+          value={this.state.league}
+          onChange={e => this.handleChangeLeague(e)}
+        />
+        <label>Team:</label>
+        <textarea
+          name="team"
+          value={this.state.team}
+          onChange={e => this.handleChangeTeam(e)}
+        />
+        {/* <label>Name:</label>
+        <input
+          type="text"
+          name="name"
+          value={this.state.name}
+          onChange={e => this.handleChangeName(e)}
+        /> */}
+        {/* <label>Injury Status:</label>
+        <textarea
+          name="injuryStatus"
+          value={this.state.injuryStatus}
+          onChange={e => this.handleChangeInjuryStatus(e)}
+        /> */}
+        {/* <label>Physiological Mediating Factor Score:</label>
+        <input
+          type="text"
+          name="physicalMediatingFactorScore"
+          value={this.state.physicalMediatingFactorScore}
+          onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
+        /> */}
+        {/* <label>Psychological Mediating Factor Score:</label>
+        <textarea
+          name="psychologicalMediatingFactorScore"
+          value={this.state.psychologicalMediatingFactorScore}
+          onChange={e =>
+            this.handleChangePsychologicalMediatingFactorScore(e)
+          }
+        /> */}
+        {/* <label>Sociological MediatingFactor Score:</label>
+        <input
+          type="text"
+          name="socialMediatingFactorScore"
+          value={this.state.socialMediatingFactorScore}
+          onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
+        /> */}
+        {/* <label>Physiological Moderating Factor Score:</label>
+        <textarea
+          name="description"
+          value={this.state.description}
+          onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
+        /> */}
+        {/* <label>Psychological Moderating Factor Score:</label>
+        <input
+          type="text"
+          name="psychologicalModeratingFactorScore"
+          value={this.state.psychologicalModeratingFactorScore}
+          onChange={e =>
+            this.handleChangePsychologicalModeratingFactorScore(e)
+          }
+        /> */}
+        {/* <label>Sociological Moderating Factor Score:</label>
+        <textarea
+          name="SocialModeratingFactorScore"
+          value={this.state.SocialModeratingFactorScore}
+          onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
+        /> */}
+        {/* <label>Injury Risk Score:</label>
+        <input
+          type="text"
+          name="injuryRiskScore"
+          value={this.state.injuryRiskScore}
+          onChange={e => this.handleChangeInjuryRiskScore(e)}
+        /> */}
+        <label>Coaching Decision:</label>
+        <textarea
+          name="coachingDecision"
+          value={this.state.coachingDecision}
+          onChange={e => this.handleChangeCoachingDecision(e)}
+        />
 
-          <label>League:</label>
-          <input
-            type="text"
-            name="league"
-            value={this.state.league}
-            onChange={e => this.handleChangeLeague(e)}
-          />
-          <label>Team:</label>
-          <textarea
-            name="team"
-            value={this.state.team}
-            onChange={e => this.handleChangeTeam(e)}
-          />
-          <label>Name:</label>
-          <input
-            type="text"
-            name="name"
-            value={this.state.name}
-            onChange={e => this.handleChangeName(e)}
-          />
-          <label>Injury Status:</label>
-          <textarea
-            name="injuryStatus"
-            value={this.state.injuryStatus}
-            onChange={e => this.handleChangeInjuryStatus(e)}
-          />
-          <label>Physiological Mediating Factor Score:</label>
-          <input
-            type="text"
-            name="physicalMediatingFactorScore"
-            value={this.state.physicalMediatingFactorScore}
-            onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
-          />
-          <label>Psychological Mediating Factor Score:</label>
-          <textarea
-            name="psychologicalMediatingFactorScore"
-            value={this.state.psychologicalMediatingFactorScore}
-            onChange={e =>
-              this.handleChangePsychologicalMediatingFactorScore(e)
-            }
-          />
-          <label>Sociological MediatingFactor Score:</label>
-          <input
-            type="text"
-            name="socialMediatingFactorScore"
-            value={this.state.socialMediatingFactorScore}
-            onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
-          />
-          <label>Physiological Moderating Factor Score:</label>
-          <textarea
-            name="description"
-            value={this.state.description}
-            onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
-          />
-          <label>Psychological Moderating Factor Score:</label>
-          <input
-            type="text"
-            name="psychologicalModeratingFactorScore"
-            value={this.state.psychologicalModeratingFactorScore}
-            onChange={e =>
-              this.handleChangePsychologicalModeratingFactorScore(e)
-            }
-          />
-          <label>Sociological Moderating Factor Score:</label>
-          <textarea
-            name="SocialModeratingFactorScore"
-            value={this.state.SocialModeratingFactorScore}
-            onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
-          />
-          <label>Injury Risk Score:</label>
-          <input
-            type="text"
-            name="injuryRiskScore"
-            value={this.state.injuryRiskScore}
-            onChange={e => this.handleChangeInjuryRiskScore(e)}
-          />
-          <label>Coaching Decision:</label>
-          <textarea
-            name="coachingDecision"
-            value={this.state.coachingDecision}
-            onChange={e => this.handleChangeCoachingDecision(e)}
-          />
-
-          <input type="submit" value="Submit" />
-        </form>
+        <input type="submit" value="Submit" />
+      </form>
       </div>
     );
-  }
+  } 
 }
+
+    } else if (this.props.theUser.staffingDivision === "Medical Staff") {
+            return (
+            <div>
+          <hr />
+          <h3>Edit form</h3>
+          <form onSubmit={this.handleFormSubmit}>
+            {/* <label>Image:</label>
+            <input
+              type="file"
+              name="imgPath"
+              value={this.state.imgPath}
+              onChange={e => this.handleChangeImgPath(e)}
+            /> */}
+            {/* <label>Sport:</label>
+            <textarea
+              name="sport"
+              value={this.state.sport}
+              onChange={e => this.handleChangeSport(e)}
+            /> */}
+            {/* <label>League:</label>
+            <input
+              type="text"
+              name="league"
+              value={this.state.league}
+              onChange={e => this.handleChangeLeague(e)}
+            /> */}
+            {/* <label>Team:</label>
+            <textarea
+              name="team"
+              value={this.state.team}
+              onChange={e => this.handleChangeTeam(e)}
+            /> */}
+            {/* <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={e => this.handleChangeName(e)}
+            /> */}
+            <label>Injury Status:</label>
+            <textarea
+              name="injuryStatus"
+              value={this.state.injuryStatus}
+              onChange={e => this.handleChangeInjuryStatus(e)}
+            />
+            <label>Physiological Mediating Factor Score:</label>
+            <input
+              type="text"
+              name="physicalMediatingFactorScore"
+              value={this.state.physicalMediatingFactorScore}
+              onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
+            />
+            <label>Psychological Mediating Factor Score:</label>
+            <textarea
+              name="psychologicalMediatingFactorScore"
+              value={this.state.psychologicalMediatingFactorScore}
+              onChange={e =>
+                this.handleChangePsychologicalMediatingFactorScore(e)
+              }
+            />
+            <label>Sociological MediatingFactor Score:</label>
+            <input
+              type="text"
+              name="socialMediatingFactorScore"
+              value={this.state.socialMediatingFactorScore}
+              onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
+            />
+            <label>Physiological Moderating Factor Score:</label>
+            <textarea
+              name="description"
+              value={this.state.description}
+              onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
+            />
+            <label>Psychological Moderating Factor Score:</label>
+            <input
+              type="text"
+              name="psychologicalModeratingFactorScore"
+              value={this.state.psychologicalModeratingFactorScore}
+              onChange={e =>
+                this.handleChangePsychologicalModeratingFactorScore(e)
+              }
+            />
+            <label>Sociological Moderating Factor Score:</label>
+            <textarea
+              name="SocialModeratingFactorScore"
+              value={this.state.SocialModeratingFactorScore}
+              onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
+            />
+            <label>Injury Risk Score:</label>
+            <input
+              type="text"
+              name="injuryRiskScore"
+              value={this.state.injuryRiskScore}
+              onChange={e => this.handleChangeInjuryRiskScore(e)}
+            />
+            <label>Injury Risk Level:</label>
+            <input
+              type="text"
+              name="injuryRiskLevel"
+              value={this.state.injuryRiskLevel}
+              onChange={e => this.handleChangeInjuryRiskLevel(e)}
+            />
+            {/* <label>Coaching Decision:</label>
+            <textarea
+              name="coachingDecision"
+              value={this.state.coachingDecision}
+              onChange={e => this.handleChangeCoachingDecision(e)}
+            /> */}
+  
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+    );
+  } 
+
+  else (this.props.theUser.staffingDivision === "Coaching Staff") {
+      return (
+        <div>
+          <hr />
+          <h3>Edit form</h3>
+          <form onSubmit={this.handleFormSubmit}>
+            <label>Image:</label>
+            <input
+              type="file"
+              name="imgPath"
+              value={this.state.imgPath}
+              onChange={e => this.handleChangeImgPath(e)}
+            />
+            <label>Sport:</label>
+            <textarea
+              name="sport"
+              value={this.state.sport}
+              onChange={e => this.handleChangeSport(e)}
+            />
+  
+            <label>League:</label>
+            <input
+              type="text"
+              name="league"
+              value={this.state.league}
+              onChange={e => this.handleChangeLeague(e)}
+            />
+            <label>Team:</label>
+            <textarea
+              name="team"
+              value={this.state.team}
+              onChange={e => this.handleChangeTeam(e)}
+            />
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={this.state.name}
+              onChange={e => this.handleChangeName(e)}
+            />
+            <label>Injury Status:</label>
+            <textarea
+              name="injuryStatus"
+              value={this.state.injuryStatus}
+              onChange={e => this.handleChangeInjuryStatus(e)}
+            />
+            <label>Physiological Mediating Factor Score:</label>
+            <input
+              type="text"
+              name="physicalMediatingFactorScore"
+              value={this.state.physicalMediatingFactorScore}
+              onChange={e => this.handleChangePhysicalMediatingFactorScore(e)}
+            />
+            <label>Psychological Mediating Factor Score:</label>
+            <textarea
+              name="psychologicalMediatingFactorScore"
+              value={this.state.psychologicalMediatingFactorScore}
+              onChange={e =>
+                this.handleChangePsychologicalMediatingFactorScore(e)
+              }
+            />
+            <label>Sociological MediatingFactor Score:</label>
+            <input
+              type="text"
+              name="socialMediatingFactorScore"
+              value={this.state.socialMediatingFactorScore}
+              onChange={e => this.handleChangeSocialMediatingFactorScore(e)}
+            />
+            <label>Physiological Moderating Factor Score:</label>
+            <textarea
+              name="description"
+              value={this.state.description}
+              onChange={e => this.handleChangePhysicalModeratingFactorScore(e)}
+            />
+            <label>Psychological Moderating Factor Score:</label>
+            <input
+              type="text"
+              name="psychologicalModeratingFactorScore"
+              value={this.state.psychologicalModeratingFactorScore}
+              onChange={e =>
+                this.handleChangePsychologicalModeratingFactorScore(e)
+              }
+            />
+            <label>Sociological Moderating Factor Score:</label>
+            <textarea
+              name="SocialModeratingFactorScore"
+              value={this.state.SocialModeratingFactorScore}
+              onChange={e => this.handleChangeSocialModeratingFactorScore(e)}
+            />
+            <label>Injury Risk Score:</label>
+            <input
+              type="text"
+              name="injuryRiskScore"
+              value={this.state.injuryRiskScore}
+              onChange={e => this.handleChangeInjuryRiskScore(e)}
+            />
+            <label>Coaching Decision:</label>
+            <textarea
+              name="coachingDecision"
+              value={this.state.coachingDecision}
+              onChange={e => this.handleChangeCoachingDecision(e)}
+            />
+  
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      );
+  }     
 
 export default EditAthlete;

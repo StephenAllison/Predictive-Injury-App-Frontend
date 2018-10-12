@@ -13,9 +13,9 @@ class CreateNewUser extends Component {
       team: " ",
       staffingDivision: " ",
       role: " ",
-      name: " ",
-      username: " ",
-      password: " "
+      name: " "
+      // username: " ",
+      // password: " "
     };
   }
 
@@ -39,9 +39,9 @@ class CreateNewUser extends Component {
       team,
       staffingDivision,
       role,
-      name,
-      username,
-      password
+      name
+      // username,
+      // password
     } = this.state;
     formData.append("imgPath", imgPath);
 
@@ -57,9 +57,9 @@ class CreateNewUser extends Component {
 
     formData.append("name", name);
 
-    formData.append("username", username);
+    // formData.append("username", username);
 
-    formData.append("password", password);
+    // formData.append("password", password);
 
     axios
       .post("http://localhost:5000/api/createNewUser", formData)
@@ -71,9 +71,9 @@ class CreateNewUser extends Component {
           team: " ",
           staffingDivision: " ",
           role: " ",
-          name: " ",
-          username: " ",
-          password: " "
+          name: " "
+          // username: " ",
+          // password: " "
         });
       })
       .catch(error => console.log(error));
@@ -123,7 +123,7 @@ class CreateNewUser extends Component {
             value={this.state.name}
             onChange={e => this.handleChange(e)}
           />
-          <label>Username:</label>
+          {/* <label>Username:</label>
           <textarea
             name="username"
             value={this.state.username}
@@ -134,7 +134,7 @@ class CreateNewUser extends Component {
             name="password"
             value={this.state.password}
             onChange={e => this.handleChange(e)}
-          />
+          /> */}
           <input type="submit" value="Submit" />
         </form>
       </div>

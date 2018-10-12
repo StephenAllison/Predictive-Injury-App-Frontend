@@ -26,9 +26,10 @@ class EditUser extends Component {
 
   handleFormSubmit = event => {
     const imgPath = this.state.imgPath;
-    const sport = this.state.sport;
-    const league = this.state.league;
-    const team = this.state.team;
+    // const sport = this.state.sport;
+    // const league = this.state.league;
+    // const team = this.state.team;
+    const staffingDivision = this.state.staffingDivision;
     const role = this.state.role;
     const name = this.state.name;
 
