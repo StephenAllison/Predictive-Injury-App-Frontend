@@ -21,7 +21,7 @@ class CreateNewAthlete extends Component {
       psychologicalModeratingFactorScore: "",
       socialModeratingFactorScore: "",
       injuryRiskScore: "",
-      riskLevel: "",
+      medicalNote: "",
       coachingDecision: ""
     };
   }
@@ -54,7 +54,7 @@ class CreateNewAthlete extends Component {
       psychologicalModeratingFactorScore,
       socialModeratingFactorScore,
       injuryRiskScore,
-      riskLevel,
+      medicalNote,
       coachingDecision
     } = this.state;
     formData.append("imgPath", imgPath);
@@ -97,7 +97,7 @@ class CreateNewAthlete extends Component {
 
     formData.append("injuryRiskScore", injuryRiskScore);
 
-    formData.append("riskLevel", riskLevel);
+    formData.append("medicalNote", medicalNote);
 
     formData.append("coachingDecision", coachingDecision);
 
@@ -118,7 +118,7 @@ class CreateNewAthlete extends Component {
           psychologicalModeratingFactorScore: "",
           socialModeratingFactorScore: "",
           injuryRiskScore: "",
-          riskLevel: "",
+          medicalNote: "",
           coachingDecision: ""
         });
       })
@@ -274,8 +274,8 @@ class CreateNewAthlete extends Component {
           <label>Risk Level:</label>
           <br />
           <textarea
-            name="riskLevel"
-            value={this.state.riskLevel}
+            name="medicalNote"
+            value={this.state.medicalNote}
             onChange={e => this.handleChange(e)}
           />
           <br />

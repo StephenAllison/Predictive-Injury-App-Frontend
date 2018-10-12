@@ -74,7 +74,7 @@
 //         <h3>{this.state.psychologicalModeratingFactorScore}</h3>
 //         <h3>{this.state.socialModeratingFactorScore}</h3>
 //         <h3>{this.state.injuryRiskScore}</h3>
-//         <h3>{this.state.riskLevel}</h3>
+//         <h3>{this.state.medicalNote}</h3>
 
 //         <button onClick={() => this.deleteAthlete()}>Delete Athlete</button>
 

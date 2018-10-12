@@ -24,7 +24,7 @@
 //         .psychologicalModeratingFactorScore,
 //       socialModeratingFactorScore: this.props.theAthlete
 //         .socialModeratingFactorScore,
-//       riskLevel: this.props.theAthlete.riskLevel
+//       medicalNote: this.props.theAthlete.medicalNote
 //     };
 //   }
 //   handleChange = e => {
@@ -56,7 +56,7 @@
 //       .psychologicalModeratingFactorScore;
 //     const socialModeratingFactorScore = this.state.socialModeratingFactorScore;
 //     const injuryRiskScore = this.state.injuryRiskScore;
-//     const riskLevel = this.state.riskLevel;
+//     const medicalNote = this.state.medicalNote;
 //     const coachingDecision = this.state.coachingDecision;
 
 //     event.preventDefault();
@@ -359,9 +359,9 @@
 //             <label>Injury Risk Level:</label>
 //             <input
 //               type="text"
-//               name="injuryRiskLevel"
-//               value={this.state.injuryRiskLevel}
-//               onChange={e => this.handleChangeInjuryRiskLevel(e)}
+//               name="injurymedicalNote"
+//               value={this.state.injurymedicalNote}
+//               onChange={e => this.handleChangeInjurymedicalNote(e)}
 //             />
 //             {/* <label>Coaching Decision:</label>
 //             <textarea
