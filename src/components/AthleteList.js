@@ -4,7 +4,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 
-import AddAthlete from "./AddAthlete";
+// import AthleteList from "./Athletes";
 
 class AthleteList extends Component {
   constructor() {
@@ -58,9 +58,115 @@ class AthleteList extends Component {
                 );
               })}
           </div>
-          <div>
+          {/* <div>
             <AddAthlete getData={() => this.getAllAthletes()} />
+          </div> */}
+        </div>
+      );
+    } else if (this.props.theUser.staffingDivision === "Medical Staff") {
+      console.log("Yes");
+      return (
+        <div>
+          <div>
+            {this.state.listOfAthletes &&
+              this.state.listOfAthletes.map((athlete, index) => {
+                return (
+                  <div key={athlete._id}>
+                    <Link to={`/athletes/${athlete._id}`}>
+                      <div>
+                        <form onSubmit={this.handleFormSubmit}>
+                          <label>Image</label>
+                          <input
+                            type="file"
+                            name="imgPath"
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <br />
+                          <label>Name:</label>
+                          <textarea
+                            name="name"
+                            value={this.state.name}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Current Injury Status:</label>
+                          <textarea
+                            name="currentInjuryStatus"
+                            value={this.state.currentInjuryStatus}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Physiological Mediating Factor Score:</label>
+                          <textarea
+                            name="physicalMediatingFactorScore"
+                            value={this.state.physicalMediatingFactorScore}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Psychological Mediating Factor Score:</label>
+                          <textarea
+                            name="psychologicalMediatingFactorScore"
+                            value={this.state.psychologicalMediatingFactorScore}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Sociological Mediating Factor Score:</label>
+                          <textarea
+                            name="socialMediatingFactorScore"
+                            value={this.state.socialMediatingFactorScore}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Physiological Moderating Factor Score:</label>
+                          <textarea
+                            name="physicalModeratingFactorScore"
+                            value={this.state.physicalModeratingFactorScore}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>psychologicalModeratingFactorScore:</label>
+                          <textarea
+                            name="psychologicalModeratingFactorScore"
+                            value={
+                              this.state.psychologicalModeratingFactorScore
+                            }
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Injury Risk Score:</label>
+                          <textarea
+                            name="injuryRiskScore"
+                            value={this.state.injuryRiskScore}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>Risk Level:</label>
+                          <textarea
+                            name="riskLevel"
+                            value={this.state.riskLevel}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <br />
+                          <label>coachingDecision:</label>
+                          <textarea
+                            name="coachingDecision"
+                            value={this.state.coachingDecision}
+                            onChange={e => this.handleChange(e)}
+                          />
+                          <input type="submit" value="Submit" />
+                        </form>
+                      </div>
+                      ); }
+                    </Link>
+                    {/* <p style={{ maxWidth: "400px" }}>{athlete.description} </p> */}
+                  </div>
+                );
+              })}
           </div>
+          {/* <div>
+            <AddAthlete getData={() => this.getAllAthletes()} />
+          </div> */}
         </div>
       );
     } else {
@@ -183,55 +289,19 @@ class AthleteList extends Component {
                           <input type="submit" value="Submit" />
                         </form>
                       </div>
-                      ); }
                     </Link>
                     {/* <p style={{ maxWidth: "400px" }}>{athlete.description} </p> */}
                   </div>
                 );
               })}
           </div>
-          <div>
+          {/* <div>
             <AddAthlete getData={() => this.getAllAthletes()} />
-          </div>
+          </div> */}
         </div>
       );
     }
   }
-  // //Medical Staff View
-  // render() {
-  //   return (
-  //     <div>
-  //       <div style>
-  //         {this.state.listOfAthletes.map((athlete, index) => {
-  //           return (
-  //             <div key={athlete._id}>
-  //               <Link to={`/athletes/${athlete._id}`}>
-  //                 <h3>{athlete.imgPath}</h3>
-  //                 <h3>{athlete.Team}</h3>
-  //                 <h4>{athlete.name}</h4>
-  //                 <h4>{athlete.position}</h4>
-  //                 <h5>{athlete.currentInjuryStatus}</h5>
-  //                 <h5>{athlete.physicalMediatingFactorScore}</h5>
-  //                 <h5>{athlete.psychologicalMediatingFactorScore}</h5>
-  //                 <h5>{athlete.socialMediatingFactorScore}</h5>
-  //                 <h5>{athlete.physicalModeratingFactorScore}</h5>
-  //                 <h5>{athlete.psychologicalModeratingFactorScore}</h5>
-  //                 <h5>{athlete.socialModeratingFactorScore}</h5>
-  //                 <h5>{athlete.injuryRiskScore}</h5>
-  //                 <h5>{athlete.riskLevel}</h5>
-  //                 <h5>{athlete.coachingDecision}</h5>
-  //               </Link>
-  //               {/* <p style={{ maxWidth: "400px" }}>{athlete.description} </p> */}
-  //             </div>
-  //           );
-  //         })}
-  //       </div>
-  //       <div>
-  //         <AddAthlete getData={() => this.getAllAthletes()} />
-  //       </div>
-  //     </div>
-  //   );
-  // }
 }
 
 export default AthleteList;

@@ -73,6 +73,13 @@ class App extends Component {
               <AthleteList {...props} theUser={this.state.loggedInUser} />
             )}
           />
+          <Route
+            exact
+            path="/EditAthlete"
+            render={props => (
+              <EditAthlete {...props} theUser={this.state.loggedInUser} />
+            )}
+          />
           <Route exact path="/athletes/:id" component={AthleteDetails} />
           <Route exact path="/createNewAthlete" component={AddAthlete} />
           <Route exact path="/createNewUser" component={AddUser} />
