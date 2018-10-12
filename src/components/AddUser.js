@@ -92,7 +92,7 @@ class CreateNewUser extends Component {
             type="file"
             name="imgPath"
             onChange={e => this.handleChange(e)}
-          />
+          />{" "}
           <label>Sport:</label>
           <textarea
             name="sport"

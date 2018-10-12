@@ -23,6 +23,478 @@
 }
 
 @keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }
+
+.mediating {
+  float: left;
+}
+
+.sums {
+  float: left;
+}
+
+.moderating {
+  float: left;
+}
+
+a {
+  color: #00B7FF;
+}
+
+body {
+  font-family: "BlinkMacSystemFont";
+}
+
+.clientDetails {
+  border-color: white;
+}
+
+.index {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  background-image: url("https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.nurseIndex {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+}
+
+.logoIndex {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 15vw;
+}
+
+Login {
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url("BackGround");
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.logoLogin {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30vw;
+}
+
+.p {
+  color: white;
+}
+
+.username {
+  color: white;
+}
+
+.password {
+  color: white;
+}
+
+.signup {
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: url(https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+.signupBtn {
+  width: 152.5px;
+  height: 25px;
+  border-radius: 12.5px;
+  background-color: #fefefe;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.loginBtn {
+  width: 152.5px;
+  display: flex;
+  height: 25px;
+  border-radius: 12.5px;
+  justify-content: center;
+  background-color: #fefefe;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.col-md-4 {
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-style-4 {
+  width: 450px;
+  font-size: 16px;
+  padding: 30px 30px 15px 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button],
+.form-style-4 input[type=text],
+.form-style-4 input[type=email],
+.form-style-4 textarea,
+.form-style-4 label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.form-style-4 label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-style-4 label>span {
+  display: block;
+  float: left;
+  width: 150px;
+}
+
+.form-style-4 input[type=text],
+.form-style-4 input[type=email] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  outline: none;
+  padding: 0px 0px 0px 0px;
+  font-style: italic;
+}
+
+.form-style-4 textarea {
+  font-style: italic;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  overflow: hidden;
+  resize: none;
+  height: 20px;
+}
+
+.form-style-4 textarea:focus,
+.form-style-4 input[type=text]:focus,
+.form-style-4 input[type=email]:focus,
+.form-style-4 input[type=email] :focus {
+  border-bottom: 1px solid #D9FFA9;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button] {
+  background: #576E86;
+  border: none;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  color: #A8BACE;
+}
+
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover {
+  background: #394D61;
+}
+
+::-webkit-input-placeholder {
+  /* Chrome */
+  color: white;
+}
+
+.clientTiles {
+  width: 170px;
+  height: 187.5px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.form-style-4 {
+  width: 450px;
+  font-size: 16px;
+  background: #495C70;
+  padding: 30px 30px 15px 30px;
+  border: 5px solid #53687E;
+}
+
+.formSignUP {
+  width: 450px;
+  font-size: 16px;
+  padding: 30px 30px 15px 30px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button],
+.form-style-4 input[type=text],
+.form-style-4 input[type=email],
+.form-style-4 textarea,
+.form-style-4 label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.formSignUP input[type=submit],
+.formSignUP input[type=button],
+.formSignUP input[type=text],
+.formSignUP input[type=email],
+.formSignUP textarea,
+.formSignUP label {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 16px;
+  color: #fff;
+}
+
+.form-style-4 label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.formSignUP label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.form-style-4 label>span {
+  display: inline-block;
+  float: left;
+  width: 150px;
+}
+
+.formSignUP label>span {
+  display: inline-block;
+  width: 150px;
+}
+
+.form-style-4 input[type=text],
+.form-style-4 input[type=email] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  outline: none;
+  padding: 0px 0px 0px 0px;
+  font-style: italic;
+}
+
+.formSignUP input[type=text],
+.formSignUP input[type=email] {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  outline: none;
+  padding: 0px 0px 0px 0px;
+  font-style: italic;
+}
+
+.form-style-4 textarea {
+  font-style: italic;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  overflow: hidden;
+  resize: none;
+  height: 20px;
+}
+
+.formSignUP textarea {
+  font-style: italic;
+  padding: 0px 0px 0px 0px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 275px;
+  overflow: hidden;
+  resize: none;
+  height: 20px;
+}
+
+.form-style-4 input[type=submit],
+.form-style-4 input[type=button] {
+  background: #576E86;
+  border: none;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  color: #A8BACE;
+}
+
+.formSignUP input[type=submit],
+.formSignUP input[type=button] {
+  background: #576E86;
+  border: none;
+  padding: 8px 10px 8px 10px;
+  border-radius: 5px;
+  color: #A8BACE;
+}
+
+.form-style-4 input[type=submit]:hover,
+.form-style-4 input[type=button]:hover {
+  background: #394D61;
+}
+
+.formSignUP input[type=submit]:hover,
+.formSignUP input[type=button]:hover {
+  background: #394D61;
+}
+
+.signup {
+  color: white;
+  width: 100vw;
+  margin-bottom: auto;
+}
+
+.h1 {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.Background {
+  height: 10vh;
+  background-color: rgba(248, 248, 248, 0.82);
+  box-shadow: 0 0.3px 0 0 rgba(0, 0, 0, 0.3);
+  align-items: flex-end;
+}
+
+title {
+  width: 22px;
+  height: 11px;
+  font-family: Roboto;
+  font-size: 8.5px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: -0.2px;
+  text-align: center;
+  color: black;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+}
+
+section::after {
+  content: "";
+  clear: both;
+  display: block;
+}
+
+section aside card {
+  background-color: #c5c5c5;
+  border-radius: 5px;
+}
+
+section aside card card-title {
+  color: #000;
+  padding: 10px 20px;
+  justify-content: center;
+}
+
+aside card card-title img {
+  background-size: cover;
+}
+
+aside .card .card-content p::after {
+  content: " | ";
+  clear: both;
+}
+
+aside .card .card-content p {
+  width: 50%;
+  margin-right: 20px;
+  color: blue;
+}
+
+.userPics {
+  width: 50vw;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.card {
+  display: flex;
+  margin-top: 20vh;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  background-color: #fafafa;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.2);
+}
+
+.home {
+  display: flex;
+  justify-content: center;
+}
+
+aside {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content {
+  display: flex;
+  width: 48vw;
+  justify-content: space-between;
+}
+
+.card-content-footer2 {
+  justify-content: flex-end;
+}
+
+/*# sourceMappingURL=style.css.map */

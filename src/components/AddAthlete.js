@@ -2,6 +2,7 @@
 
 import React, { Component } from "react";
 import axios from "axios";
+import "../App.css";
 
 class CreateNewAthlete extends Component {
   constructor(props) {
@@ -145,15 +146,15 @@ class CreateNewAthlete extends Component {
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.handleFormSubmit}>
+      <form onSubmit={this.handleFormSubmit}>
+        <div class="addAthlete">
           <label>Image</label>
           <br />
           <input
             type="file"
             name="imgPath"
             onChange={e => this.handleChange(e)}
-          />
+          />{" "}
           <br />
           <br />
           <br />
@@ -271,8 +272,8 @@ class CreateNewAthlete extends Component {
           <label>Sociological Moderating FactorScore:</label>
           <br />
           <textarea
-            name="socialMediatingFactorScore"
-            value={this.state.socialMediatingFactorScore}
+            name="socialModeratingFactorScore"
+            value={this.state.socialModeratingFactorScore}
             onChange={e => this.handleChange(e)}
           />
           <br />
@@ -339,8 +340,8 @@ class CreateNewAthlete extends Component {
           <br />
           <br />
           <input type="submit" value="Submit" />
-        </form>
-      </div>
+        </div>
+      </form>
     );
   }
 }

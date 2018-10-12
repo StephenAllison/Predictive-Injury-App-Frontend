@@ -46,6 +46,7 @@ class Signup extends Component {
       )
       .then(theUserObject => {
         this.setState({
+          imgPath: " ",
           sport: "",
           league: "",
           team: "",
@@ -70,8 +71,15 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <form>
         <form onSubmit={this.handleFormSubmit}>
+          <label>Image:</label>
+          <input
+            type="file"
+            name="imgPath"
+            onChange={e => this.handleChange(e)}
+          />{" "}
+          <br />
           <label>Sport:</label>
           <input
             type="text"
@@ -135,12 +143,11 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
-
           <input type="submit" value="Signup" />
         </form>
 
         <Link to={"/signup"}> Signup</Link>
-      </div>
+      </form>
     );
   }
 }

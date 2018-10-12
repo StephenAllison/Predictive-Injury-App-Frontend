@@ -36,7 +36,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div class="index">
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input
