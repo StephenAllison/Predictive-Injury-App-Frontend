@@ -97,9 +97,9 @@ class App extends Component {
           />
           <Route
             exact
-            path="/updateAthleteProfile"
+            path="/updateAthelete"
             render={props => (
-              <AddAthlete {...props} theUser={this.state.loggedInUser} />
+              <EditAthlete {...props} theUser={this.state.loggedInUser} />
             )}
           />
           <Route
