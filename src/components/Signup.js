@@ -8,6 +8,7 @@ class Signup extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      imgPath: " ",
       sport: "",
       league: "",
       team: "",
@@ -22,6 +23,7 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    const imgPath = this.state.imgPath;
     const sport = this.state.sport;
     const league = this.state.league;
     const team = this.state.team;
@@ -34,6 +36,7 @@ class Signup extends Component {
 
     this.service
       .signup(
+        imgPath,
         sport,
         league,
         team,

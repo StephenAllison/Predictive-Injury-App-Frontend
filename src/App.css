@@ -60,8 +60,8 @@ body {
   display: flex;
   padding: 0;
   margin: 0;
-  background-image: url("https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png");
-  background-repeat: no-repeat;
+  background-image: url("./preview.png");
+  /* background-repeat: no-repeat; */
   background-size: cover;
   justify-content: center;
   flex-direction: column;
@@ -90,8 +90,7 @@ Login {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  background-image: url("BackGround");
-  background-repeat: no-repeat;
+  /* background-image: url("https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png"); */
   background-size: cover;
   justify-content: center;
   flex-direction: column;
@@ -126,7 +125,7 @@ Login {
   padding: 0;
   margin-left: auto;
   margin-right: auto;
-  background-image: url(https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png);
+  /* background-image: url(https://res.cloudinary.com/dw7omfinb/image/upload/v1539365810/samples/BackGround.png); */
   background-repeat: no-repeat;
   background-size: cover;
   justify-content: center;
@@ -496,5 +495,38 @@ aside {
 .card-content-footer2 {
   justify-content: flex-end;
 }
+
+.loginPage-Home {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-image: url(https://www.nba.com/heat/sites/heat/files/styles/hi_res_images/public/1314_d7_background_140417.jpg?itok=hMkavaIT);
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+
+}
+
+Login {
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+}
+
+
 
 /*# sourceMappingURL=style.css.map */

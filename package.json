@@ -14,7 +14,8 @@
     "react-dropdown-input": "^0.1.11",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.5",
-    "reactstrap": "^6.5.0"
+    "reactstrap": "^6.5.0",
+    "source-sans-pro": "git://github.com/adobe-fonts/source-sans-pro.git#release"
   },
   "scripts": {
     "start": "react-scripts start",

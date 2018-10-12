@@ -36,8 +36,9 @@ class Login extends Component {
 
   render() {
     return (
-      <div class="index">
+      <div className="loginPage-Home">
         <form onSubmit={this.handleFormSubmit}>
+          <h1>Sport Predictive Injury</h1>
           <label>Username:</label>
           <input
             type="text"
@@ -45,6 +46,9 @@ class Login extends Component {
             value={this.state.username}
             onChange={e => this.handleChange(e)}
           />
+          <br />
+          <br />
+          <br />
 
           <label>Password:</label>
           <input

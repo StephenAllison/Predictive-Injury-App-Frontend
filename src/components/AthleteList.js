@@ -108,7 +108,25 @@ class AthleteList extends Component {
                             <p>
                               Medical Note :{athlete.medicalNote}
                               <br />
-                              Coaching Decision:
+                              Physical Mediating Factor Score:
+                              {athlete.physicalMediatingFactorScore}
+                              Psychological Mediating Factor Score:
+                              {athlete.psychologicalMediatingFactorScore}
+                              Social Mediating Factor Score:
+                              {athlete.socialMediatingFactorScore}
+                              physical Moderating Factor Score :
+                              {athlete.physicalModeratingFactorScore}
+                              PsychologicalModeratingFactorScore:
+                              {athlete.psychologicalModeratingFactorScore}
+                              Social ModeratingFactor Score:
+                              {athlete.socialModeratingFactorScore}
+                              Injury Risk Score:
+                              {athlete.injuryRiskScore}
+                              Medical Note:
+                              {athlete.medicalNote}
+                              Overall Sociological Health:
+                              {athlete.overallSociologicalHealth}
+                              OoachingDecision:
                               {athlete.coachingDecision}
                               <br />
                             </p>

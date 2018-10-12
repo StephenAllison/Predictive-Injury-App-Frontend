@@ -39,7 +39,7 @@ class AuthService {
 
   login = (username, password) => {
     return this.service
-      .post("/login", {
+      .post("/", {
         username,
         password
       })
