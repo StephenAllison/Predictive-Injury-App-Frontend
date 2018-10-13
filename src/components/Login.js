@@ -3,6 +3,7 @@
 import React, { Component } from "react";
 import AuthService from "./auth/auth-service";
 import { Link } from "react-router-dom";
+import ReactDOM from "react-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -22,9 +23,12 @@ class Login extends Component {
         this.setState({
           username: "",
           password: ""
-        });
+        }); //OOOOOH!!!!!! ///an S on athlete
         this.props.setTheUserInTheAppComponent(response);
-        this.props.history.push("/athletes");
+        console.log(response());
+        ///did not help
+
+        this.props.history.push(`/athletes`); //+
       })
       .catch(error => console.log(error));
   };
@@ -38,7 +42,8 @@ class Login extends Component {
     return (
       <div className="loginPage-Home">
         <form onSubmit={this.handleFormSubmit}>
-          <h1>Sport Predictive Injury</h1>
+          <h1>Predictive Sport Injury App</h1>
+          <br />
           <label>Username:</label>
           <input
             type="text"
@@ -59,7 +64,15 @@ class Login extends Component {
 
           <input type="submit" value="Login" />
         </form>
-
+        <br />
+        <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
+        <br />
+        <br /> <br />
+        <br />
         <p>
           Don't have an account?
           <Link to={"/signup"}> Signup</Link>

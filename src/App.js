@@ -54,7 +54,7 @@ class App extends Component {
         <Switch>
           <Route
             exact
-            path="/login"
+            path="/"
             render={props => (
               <Login {...props} setTheUserInTheAppComponent={this.logMeIn} />
             )}

@@ -61,7 +61,7 @@ class Signup extends Component {
           // img: ""
         });
         this.props.setTheUserInTheAppComponent(theUserObject);
-        this.props.history.push("/login");
+        this.props.history.push("/");
         // console.log("++++++++++theUserObject++++++++", req.body);
       })
       .catch(error => console.log(error));
@@ -74,7 +74,7 @@ class Signup extends Component {
 
   render() {
     return (
-      <form>
+      <div>
         <form onSubmit={this.handleFormSubmit}>
           <label>Image:</label>
           <input
@@ -150,9 +150,8 @@ class Signup extends Component {
         </form>
 
         <Link to={"/signup"}> Signup</Link>
-      </form>
+      </div>
     );
   }
 }
-
 export default Signup;

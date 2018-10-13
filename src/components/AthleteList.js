@@ -55,7 +55,7 @@ class AthleteList extends Component {
                 return (
                   // Float Left
                   <div>
-                    <div>
+                    <div className="Card">
                       <div key={athlete._id}>
                         <Link to={`/athletes/${athlete._id}`}>
                           <h1>{athlete.name}</h1>
@@ -95,7 +95,7 @@ class AthleteList extends Component {
               this.state.listOfAthletes.map((athlete, index) => {
                 return (
                   // Float Left
-                  <div>
+                  <div className="Card">
                     <div>
                       <div key={athlete._id}>
                         <Link to={`/athletes/${athlete._id}`}>
@@ -144,28 +144,35 @@ class AthleteList extends Component {
     } else {
       return (
         <div>
-          <div>
-            {this.state.listOfAthletes.map((athlete, index) => {
-              <div key={athlete._id}>
-                <Link to={`/athletes/${athlete._id}`}>
-                  <h1>{athlete.name}</h1>
-                  <h3>{athlete.currentInjuryStatus}</h3>
-                  {athlete.currentInjuryStatus}
-                  <img src={athlete.imgPath} />
+          <div className="card">
+            {this.state.listOfAthletes &&
+              this.state.listOfAthletes.map((athlete, index) => {
+                return (
                   <div>
-                    <h3>{athlete.position}</h3>
-                    <p>
-                      Medical Note :{athlete.medicalNote}
-                      <br />
-                      Coaching Decision:
-                      {athlete.coachingDecision}
-                      <br />
-                    </p>
-                    <Button>Button</Button>
+                    <div>
+                      <div key={athlete._id}>
+                        <Link to={`/athletes/${athlete._id}`}>
+                          <h1>{athlete.name}</h1>
+                          <h3>{athlete.currentInjuryStatus}</h3>
+                          {athlete.currentInjuryStatus}
+                          <img src={athlete.imgPath} />
+                          <div>
+                            <h3>{athlete.position}</h3>
+                            <p>
+                              Medical Note :{athlete.medicalNote}
+                              <br />
+                              Coaching Decision:
+                              {athlete.coachingDecision}
+                              <br />
+                            </p>
+                            <Button>Button</Button>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
                   </div>
-                </Link>
-              </div>;
-            })}
+                );
+              })}
           </div>
         </div>
       );
