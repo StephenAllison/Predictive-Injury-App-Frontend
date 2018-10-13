@@ -31,6 +31,26 @@ class Navbar extends Component {
               </Link>
             </li>
             <li>
+              <Link to="/updateAthelete" style={{ textDecoration: "none" }}>
+                Edit Athlete
+              </Link>
+            </li>
+            <li>
+              <Link to="/athletes" style={{ textDecoration: "none" }}>
+                Athletes
+              </Link>
+            </li>
+            <li>
+              <Link to="/athletes" style={{ textDecoration: "none" }}>
+                Athletes
+              </Link>
+            </li>
+            <li>
+              <Link to="/athletes" style={{ textDecoration: "none" }}>
+                Athletes
+              </Link>
+            </li>
+            <li>
               <button onClick={() => this.logout()}>Log Out</button>
             </li>
           </ul>

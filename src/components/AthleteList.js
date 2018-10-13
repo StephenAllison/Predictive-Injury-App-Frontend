@@ -24,7 +24,12 @@ class AthleteList extends Component {
 
   getAllAthletes = () => {
     axios
-      .get("http://localhost:5000/api/athletes")
+      //DEPLOY LOCALLY
+      // .get("http://localhost:5000/api/athletes")
+      //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //DEPLOY TO HEROKU
+      .get(`${process.env.REACT_APP_API_URL}/athletes`)
+
       .then(responseFromApi => {
         console.log("=-=-=-=-=-=-=-=-=-=", responseFromApi);
 
@@ -46,137 +51,137 @@ class AthleteList extends Component {
   render() {
     console.log("=-=-=-=-=--=-=-=-", this.props);
 
-    // if (this.props.theUser.staffingDivision === "Coaching Staff") {
-    return (
-      <div>
+    if (this.props.theUser.staffingDivision === "Coaching Staff") {
+      return (
         <div>
-          {this.state.listOfAthletes &&
-            this.state.listOfAthletes.map((athlete, index) => {
-              return (
-                // Float Left
-                <div>
-                  <div className="Card">
-                    <div key={athlete._id}>
-                      <Link to={`/athletes/${athlete._id}`}>
-                        <h1>{athlete.name}</h1>
-                        <h3>{athlete.currentInjuryStatus}</h3>
-                        {athlete.currentInjuryStatus}
-                        <img src={athlete.imgPath} />
-                        <div>
-                          <h3>{athlete.position}</h3>
-                          <p>
-                            Medical Note :{athlete.medicalNote}
-                            <br />
-                            Coaching Decision:
-                            {athlete.coachingDecision}
-                            <br />
-                          </p>
-                          <Button>Button</Button>
-                        </div>
-                      </Link>
+          <div>
+            {this.state.listOfAthletes &&
+              this.state.listOfAthletes.map((athlete, index) => {
+                return (
+                  // Float Left
+                  <div>
+                    <div className="Card">
+                      <div key={athlete._id}>
+                        <Link to={`/athletes/${athlete._id}`}>
+                          <h1>{athlete.name}</h1>
+                          <h3>{athlete.currentInjuryStatus}</h3>
+                          {athlete.currentInjuryStatus}
+                          <img src={athlete.imgPath} />
+                          <div>
+                            <h3>{athlete.position}</h3>
+                            <p>
+                              Medical Note :{athlete.medicalNote}
+                              <br />
+                              Coaching Decision:
+                              {athlete.coachingDecision}
+                              <br />
+                            </p>
+                            <Button>Button</Button>
+                          </div>
+                        </Link>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
 
-          {/* <div>
-            <AddAthlete getData={() => this.getAllAthletes()} />
-          </div> */}
+            <div>
+              {/* <AddAthlete getData={() => this.getAllAthletes()} /> */}
+            </div>
+          </div>
         </div>
-      </div>
-    );
-    // } else if (this.props.theUser.staffingDivision === "MedStaff") {
-    //   console.log(this.state);
-    //   return (
-    //     <div>
-    //       <div>
-    //         {this.state.listOfAthletes &&
-    //           this.state.listOfAthletes.map((athlete, index) => {
-    //             return (
-    //               // Float Left
-    //               <div className="Card">
-    //                 <div>
-    //                   <div key={athlete._id}>
-    //                     <Link to={`/athletes/${athlete._id}`}>
-    //                       <h1>{athlete.name}</h1>
-    //                       <h3>{athlete.currentInjuryStatus}</h3>
-    //                       {athlete.currentInjuryStatus}
-    //                       <img src={athlete.imgPath} />
-    //                       <div>
-    //                         <h3>{athlete.position}</h3>
-    //                         <p>
-    //                           Medical Note :{athlete.medicalNote}
-    //                           <br />
-    //                           Physical Mediating Factor Score:
-    //                           {athlete.physicalMediatingFactorScore}
-    //                           Psychological Mediating Factor Score:
-    //                           {athlete.psychologicalMediatingFactorScore}
-    //                           Social Mediating Factor Score:
-    //                           {athlete.socialMediatingFactorScore}
-    //                           physical Moderating Factor Score :
-    //                           {athlete.physicalModeratingFactorScore}
-    //                           PsychologicalModeratingFactorScore:
-    //                           {athlete.psychologicalModeratingFactorScore}
-    //                           Social ModeratingFactor Score:
-    //                           {athlete.socialModeratingFactorScore}
-    //                           Injury Risk Score:
-    //                           {athlete.injuryRiskScore}
-    //                           Medical Note:
-    //                           {athlete.medicalNote}
-    //                           Overall Sociological Health:
-    //                           {athlete.overallSociologicalHealth}
-    //                           OoachingDecision:
-    //                           {athlete.coachingDecision}
-    //                           <br />
-    //                         </p>
-    //                         <Button>Button</Button>
-    //                       </div>
-    //                     </Link>
-    //                   </div>
-    //                 </div>
-    //               </div>
-    //             );
-    //           })}
-    //       </div>
-    //     </div>
-    //   );
-    // } else {
-    //   return (
-    //     <div>
-    //       <div className="card">
-    //         {this.state.listOfAthletes &&
-    //           this.state.listOfAthletes.map((athlete, index) => {
-    //             return (
-    //               <div>
-    //                 <div>
-    //                   <div key={athlete._id}>
-    //                     <Link to={`/athletes/${athlete._id}`}>
-    //                       <h1>{athlete.name}</h1>
-    //                       <h3>{athlete.currentInjuryStatus}</h3>
-    //                       {athlete.currentInjuryStatus}
-    //                       <img src={athlete.imgPath} />
-    //                       <div>
-    //                         <h3>{athlete.position}</h3>
-    //                         <p>
-    //                           Medical Note :{athlete.medicalNote}
-    //                           <br />
-    //                           Coaching Decision:
-    //                           {athlete.coachingDecision}
-    //                           <br />
-    //                         </p>
-    //                         <Button>Button</Button>
-    //                       </div>
-    //                     </Link>
-    //                   </div>
-    //                 </div>
-    //               </div>
-    //             );
-    //           })}
-    //       </div>
-    //     </div>
-    //   );
-    // }
+      );
+    } else if (this.props.theUser.staffingDivision === "MedStaff") {
+      console.log(this.state);
+      return (
+        <div>
+          <div>
+            {this.state.listOfAthletes &&
+              this.state.listOfAthletes.map((athlete, index) => {
+                return (
+                  // Float Left
+                  <div className="Card">
+                    <div>
+                      <div key={athlete._id}>
+                        <Link to={`/athletes/${athlete._id}`}>
+                          <h1>{athlete.name}</h1>
+                          <h3>{athlete.currentInjuryStatus}</h3>
+                          {athlete.currentInjuryStatus}
+                          <img src={athlete.imgPath} />
+                          <div>
+                            <h3>{athlete.position}</h3>
+                            <p>
+                              Medical Note :{athlete.medicalNote}
+                              <br />
+                              Physical Mediating Factor Score:
+                              {athlete.physicalMediatingFactorScore}
+                              Psychological Mediating Factor Score:
+                              {athlete.psychologicalMediatingFactorScore}
+                              Social Mediating Factor Score:
+                              {athlete.socialMediatingFactorScore}
+                              physical Moderating Factor Score :
+                              {athlete.physicalModeratingFactorScore}
+                              PsychologicalModeratingFactorScore:
+                              {athlete.psychologicalModeratingFactorScore}
+                              Social ModeratingFactor Score:
+                              {athlete.socialModeratingFactorScore}
+                              Injury Risk Score:
+                              {athlete.injuryRiskScore}
+                              Medical Note:
+                              {athlete.medicalNote}
+                              Overall Sociological Health:
+                              {athlete.overallSociologicalHealth}
+                              OoachingDecision:
+                              {athlete.coachingDecision}
+                              <br />
+                            </p>
+                            <Button>Button</Button>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <div className="card">
+            {this.state.listOfAthletes &&
+              this.state.listOfAthletes.map((athlete, index) => {
+                return (
+                  <div>
+                    <div>
+                      <div key={athlete._id}>
+                        <Link to={`/athletes/${athlete._id}`}>
+                          <h1>{athlete.name}</h1>
+                          <h3>{athlete.currentInjuryStatus}</h3>
+                          {athlete.currentInjuryStatus}
+                          <img src={athlete.imgPath} />
+                          <div>
+                            <h3>{athlete.position}</h3>
+                            <p>
+                              Medical Note :{athlete.medicalNote}
+                              <br />
+                              Coaching Decision:
+                              {athlete.coachingDecision}
+                              <br />
+                            </p>
+                            <Button>Button</Button>
+                          </div>
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                );
+              })}
+          </div>
+        </div>
+      );
+    }
   }
 }
 

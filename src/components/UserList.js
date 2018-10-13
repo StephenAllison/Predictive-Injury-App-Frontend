@@ -13,7 +13,11 @@ class UserList extends Component {
 
   getAllUsers = () => {
     axios
-      .get("http://localhost:5000/api/users")
+      //DEPLOY LOCALLY
+      // .get("http://localhost:5000/api/users")
+      //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //DEPLOY TO HEROKU
+      .get(`${process.env.REACT_APP_API_URL}/users`)
       .then(responseFromApi => {
         console.log("=-=-=-=-=-=-=-=-=-=", responseFromApi);
 

@@ -114,7 +114,11 @@ class CreateNewAthlete extends Component {
     formData.append("coachingDecision", coachingDecision);
 
     axios
-      .post("http://localhost:5000/api/createNewAthlete", formData)
+      //DEPLOY LOCALLY
+      // .post("http://localhost:5000/api/createNewAthlete", formData)
+      //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+      //DEPLOY TO HEROKU
+      .post(`${process.env.REACT_APP_API_URL}/createNewAthlete`, formData)
       .then(() => {
         this.setState({
           imgPath: " ",
