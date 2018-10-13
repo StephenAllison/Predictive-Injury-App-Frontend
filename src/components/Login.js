@@ -23,10 +23,9 @@ class Login extends Component {
         this.setState({
           username: "",
           password: ""
-        }); //OOOOOH!!!!!! ///an S on athlete
+        });
         this.props.setTheUserInTheAppComponent(response);
-        console.log(response());
-        ///did not help
+        console.log(response);
 
         this.props.history.push(`/athletes`); //+
       })
@@ -42,8 +41,7 @@ class Login extends Component {
     return (
       <div className="loginPage-Home">
         <form onSubmit={this.handleFormSubmit}>
-          <h1>Predictive Sport Injury App</h1>
-          <br />
+          <h1>Sport Predictive Injury</h1>
           <label>Username:</label>
           <input
             type="text"
@@ -64,15 +62,7 @@ class Login extends Component {
 
           <input type="submit" value="Login" />
         </form>
-        <br />
-        <br />
-        <br />
-        <br />
-        <br /> <br />
-        <br />
-        <br />
-        <br /> <br />
-        <br />
+
         <p>
           Don't have an account?
           <Link to={"/signup"}> Signup</Link>

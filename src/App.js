@@ -5,14 +5,15 @@ import Signup from "./components/Signup";
 import Login from "./components/Login";
 // import axios from "axios";
 import AuthService from "./components/auth/auth-service";
-import AthleteList from "./components/AthleteList";
-// import Navbar from "./components/Navbar";
-import AthleteDetails from "./components/AthleteFullDetails";
-import AddAthlete from "./components/AddAthlete";
-import AddUser from "./components/AddUser";
-import EditAthlete from "./components/EditAthlete";
-import EditUser from "./components/EditUser";
 import UserList from "./components/UserList";
+import AddUser from "./components/AddUser";
+import EditUser from "./components/EditUser";
+import AthleteList from "./components/AthleteList";
+import AddAthlete from "./components/AddAthlete";
+import EditAthlete from "./components/EditAthlete";
+
+import Navbar from "./components/Navbar";
+import AthleteDetails from "./components/AthleteFullDetails";
 
 import { Switch, Route } from "react-router-dom";
 class App extends Component {
@@ -109,7 +110,7 @@ class App extends Component {
               <EditUser {...props} theUser={this.state.loggedInUser} />
             )}
           />
-          {/* <Route exact path="/athletes/:id" component={AthleteDetails} /> */}
+          <Route exact path="/athletes/:id" component={AthleteDetails} />
           <Route exact path="/user/:id" component={EditUser} />
           <Route exact path="/users" component={UserList} />
         </Switch>

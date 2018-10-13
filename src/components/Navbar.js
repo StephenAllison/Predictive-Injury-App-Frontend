@@ -46,6 +46,21 @@ class Navbar extends Component {
                   Signup
                 </Link>
               </li>
+              <li>
+                <Link to="/signout" style={{ textDecoration: "none" }}>
+                  Signup
+                </Link>
+              </li>
+              <li>
+                {/* <Link to="/signup" style={{ textDecoration: "none" }}>
+                  Signup
+                </Link>
+              </li>
+              <li>
+                <Link to="/signup" style={{ textDecoration: "none" }}>
+                  Signup
+                </Link> */}
+              </li>
             </ul>
           </nav>
         </div>

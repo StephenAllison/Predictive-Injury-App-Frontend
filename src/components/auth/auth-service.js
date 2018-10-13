@@ -6,6 +6,7 @@ class AuthService {
   constructor() {
     let service = axios.create({
       baseURL: process.env.REACT_APP_BASE_URL,
+      // baseURL: "http://localhost:5000/api",
       withCredentials: true
     });
     this.service = service;
@@ -39,7 +40,7 @@ class AuthService {
 
   login = (username, password) => {
     return this.service
-      .post("/", {
+      .post("/login", {
         username,
         password
       })
