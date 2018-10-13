@@ -110,7 +110,7 @@ class App extends Component {
               <EditUser {...props} theUser={this.state.loggedInUser} />
             )}
           />
-          <Route exact path="/athletes/:id" component={AthleteDetails} />
+          {/* <Route exact path="/athletes/:id" component={AthleteDetails} /> */}
           <Route exact path="/user/:id" component={EditUser} />
           <Route exact path="/users" component={UserList} />
         </Switch>
