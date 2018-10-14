@@ -48,10 +48,10 @@ class App extends Component {
     this.fetchUser();
     return (
       <div className="App">
-        <Navbar
+        {/* <Navbar
           setTheUserInTheAppComponent={this.logMeIn}
           userInSession={this.state.loggedInUser}
-        />
+        /> */}
         <Switch>
           <Route
             exact
