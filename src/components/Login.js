@@ -24,10 +24,9 @@ class Login extends Component {
           username: "",
           password: ""
         });
-        this.props.setTheUserInTheAppComponent(response);
-        console.log(response);
+        localStorage.setItem("userData", JSON.stringify(response));
 
-        this.props.history.push(`/athletes`); //+
+        this.props.history.push("athletes"); //+
       })
       .catch(error => console.log(error));
   };

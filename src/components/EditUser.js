@@ -37,10 +37,10 @@ class EditUser extends Component {
 
     axios
       //DEPLOY LOCALLY
-      // .put(`http://localhost:5000/api/users/${this.props.theUser._id}`)
+      .put(`http://localhost:5000/api/users/${this.props.theUser._id}`)
       //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       //DEPLOY TO HEROKU
-      .put(`${process.env.REACT_APP_API_URL}/users${this.props.theUser._id}`)
+      // .put(`${process.env.REACT_APP_API_URL}/users${this.props.theUser._id}`)
 
       .then(() => {
         this.props.getTheUser();

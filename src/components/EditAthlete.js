@@ -55,12 +55,15 @@ class EditAthlete extends Component {
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     axios
       // //DEPLOY LOCALLY
-      // .put(`http://localhost:5000/api/athletes/${this.props.theAtlete._id}`)
+      .put(
+        `http://localhost:5000/api/updateAthleteProfile/${
+          this.props.match.params.id
+        }`
+      )
       //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       // DEPLOY TO HEROKU
-      .put(
-        `${process.env.REACT_APP_API_URL}/athletes${this.props.theAtlete._id}`
-      )
+      // .put(
+      //   `${process.env.REACT_APP_API_URL}/athletes${this.props.theAtlete._id}`
 
       .then(() => {
         this.props.getTheAthlete();

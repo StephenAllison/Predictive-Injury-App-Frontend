@@ -28,6 +28,11 @@ class App extends Component {
     });
   };
 
+  getUserData() {
+    const userData = JSON.parse(localStorage.getItem("userData"));
+    return userData;
+  }
+
   fetchUser() {
     if (this.state.loggedInUser === null) {
       this.service
@@ -71,14 +76,13 @@ class App extends Component {
             exact
             path="/athletes"
             render={props => (
-              <AthleteList {...props} theUser={this.state.loggedInUser} />
+              <AthleteList {...props} theUser={this.getUserData()} />
             )}
           />
           <Route
-            exact
-            path="/EditAthlete"
+            path="/EditAthlete/:id"
             render={props => (
-              <EditAthlete {...props} theUser={this.state.loggedInUser} />
+              <EditAthlete {...props} theUser={this.getUserData()} />
             )}
           />
           />

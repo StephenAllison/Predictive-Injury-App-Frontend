@@ -62,11 +62,10 @@ class CreateNewUser extends Component {
     // formData.append("password", password);
 
     axios
-      //DEPLOY LOCALLY
-      // .post("http://localhost:5000/api/createNewUser", formData)
+      .post("http://localhost:5000/api/createNewUser", formData)
       //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-      //DEPLOY TO HEROKU
-      .post(`${process.env.REACT_APP_API_URL}/createNewUser`, formData)
+      // //DEPLOY TO HEROKU
+      // .post(`${process.env.REACT_APP_API_URL}/createNewUser`, formData)
 
       .then(() => {
         this.setState({
