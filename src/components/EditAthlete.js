@@ -55,11 +55,7 @@ class EditAthlete extends Component {
     //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
     axios
       // //DEPLOY LOCALLY
-      .put(
-        `http://localhost:5000/api/updateAthleteProfile/${
-          this.props.match.params.id
-        }`
-      )
+      .put(`/api/updateAthleteProfile/${this.props.match.params.id}`)
       //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       // DEPLOY TO HEROKU
       // .put(

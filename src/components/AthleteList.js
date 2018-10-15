@@ -71,9 +71,7 @@ class AthleteList extends Component {
     axios
       // //DEPLOY LOCALLY
       .patch(
-        `http://localhost:5000/api/updateAthleteProfile/${
-          this.state.currentAthleteId
-        }`,
+        `/api/updateAthleteProfile/${this.state.currentAthleteId}`,
         submitData
       )
       //++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -95,7 +93,7 @@ class AthleteList extends Component {
   getAllAthletes = () => {
     axios
       // DEPLOY LOCALLY
-      .get("http://localhost:5000/api/athletes")
+      .get("/api/athletes")
       //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
       // //DEPLOY TO HEROKU
       // .get(`${process.env.REACT_APP_API_URL}/athletes`)
@@ -114,7 +112,6 @@ class AthleteList extends Component {
 
   componentWillMount() {
     const isLoggedIn = localStorage.getItem("userData");
-    console.log("Hello world");
     if (!isLoggedIn) {
       window.location = "/";
     }
@@ -130,7 +127,7 @@ class AthleteList extends Component {
   };
 
   deleteAthlete = id => {
-    axios.delete(`http://localhost:5000/api/deleteAthlete/${id}`).then(() => {
+    axios.delete(`/api/deleteAthlete/${id}`).then(() => {
       this.setState({
         message: "User deleted succesfully!!!"
       });
@@ -163,7 +160,7 @@ class AthleteList extends Component {
                 return (
                   // Float Left
                   <div key={athlete._id}>
-                    <div className="Card">
+                    <div className="card">
                       <div>
                         <input
                           onChange={(e, id) =>
@@ -231,44 +228,166 @@ class AthleteList extends Component {
               this.state.listOfAthletes.map((athlete, index) => {
                 return (
                   // Float Left
-                  <div className="Card">
-                    <div>
-                      <div key={athlete._id}>
-                        <Link to={`/athletes/${athlete._id}`}>
-                          <h1>{athlete.name}</h1>
-                          <h3>{athlete.currentInjuryStatus}</h3>
-                          {athlete.currentInjuryStatus}
-                          <img src={athlete.imgPath} />
-                          <div>
-                            <h3>{athlete.position}</h3>
-                            <p>
-                              Medical Note :{athlete.medicalNote}
-                              <br />
-                              Physical Mediating Factor Score:
-                              {athlete.physicalMediatingFactorScore}
-                              Psychological Mediating Factor Score:
-                              {athlete.psychologicalMediatingFactorScore}
-                              Social Mediating Factor Score:
-                              {athlete.socialMediatingFactorScore}
-                              physical Moderating Factor Score :
-                              {athlete.physicalModeratingFactorScore}
-                              PsychologicalModeratingFactorScore:
-                              {athlete.psychologicalModeratingFactorScore}
-                              Social ModeratingFactor Score:
-                              {athlete.socialModeratingFactorScore}
-                              Injury Risk Score:
-                              {athlete.injuryRiskScore}
-                              Medical Note:
-                              {athlete.medicalNote}
-                              Overall Sociological Health:
-                              {athlete.overallSociologicalHealth}
-                              OoachingDecision:
-                              {athlete.coachingDecision}
-                              <br />
-                            </p>
-                            <Button>Button</Button>
-                          </div>
-                        </Link>
+                  <div className="card">
+                    <div key={athlete._id}>
+                      <div>
+                        <input
+                          onChange={(e, id) =>
+                            this.handleChange(e, athlete._id)
+                          }
+                          name="name"
+                          type="text"
+                          defaultValue={athlete.name}
+                        />
+                        <br />
+                        {/* Injury Status:
+                        <input
+                          type="text"
+                          defaultValue={athlete.currentInjuryStatus} */}
+                        {/* s */}
+                        <br />
+                        <img src={athlete.imgPath} />
+                        <div>
+                          Position:
+                          <input
+                            onChange={(e, id) =>
+                              this.handleChange(e, athlete._id)
+                            }
+                            name="position"
+                            type="text"
+                            defaultValue={athlete.position}
+                          />
+                          <p>
+                            Current Injury Status:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="currentInjuryStatus"
+                              type="text"
+                              defaultValue={athlete.currentInjuryStatus}
+                            />
+                            Physical Mediating Factor Score:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="physicalMediatingFactorScore"
+                              type="text"
+                              defaultValue={
+                                athlete.physicalMediatingFactorScore
+                              }
+                            />
+                            Psychological Mediating FactorScore:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="psychologicalMediatingFactorScore"
+                              type="text"
+                              defaultValue={
+                                athlete.psychologicalMediatingFactorScore
+                              }
+                            />
+                            Social Mediating Factor Score:{" "}
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="socialMediatingFactorScore"
+                              type="text"
+                              defaultValue={athlete.socialMediatingFactorScore}
+                            />
+                            Physical Moderating FactorScore:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="physicalModeratingFactorScore"
+                              type="text"
+                              defaultValue={
+                                athlete.physicalModeratingFactorScore
+                              }
+                            />
+                            Psychological Moderating Factor Score:{" "}
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="psychologicalModeratingFactorScore"
+                              type="text"
+                              defaultValue={
+                                athlete.psychologicalModeratingFactorScore
+                              }
+                            />
+                            socialModeratingFactorScore:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="socialModeratingFactorScore"
+                              type="text"
+                              defaultValue={athlete.socialModeratingFactorScore}
+                            />
+                            <br />
+                            Overall Physiological Health:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="overallPhysiologicalHealth"
+                              type="text"
+                              defaultValue={athlete.overallPhysiologicalHealth}
+                            />
+                            <br />
+                            Overall Psychological Health:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="overallPsychologicalHealth"
+                              type="text"
+                              defaultValue={athlete.overallPsychologicalHealth}
+                            />
+                            <br />
+                            Overall Sociological Health:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="overallSociologicalHealth"
+                              type="text"
+                              defaultValue={athlete.overallSociologicalHealth}
+                            />
+                            <br />
+                            Injury Risk Score:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="injuryRiskScore"
+                              type="text"
+                              defaultValue={athlete.injuryRiskScore}
+                            />
+                            <br />
+                            Medical Note :{athlete.medicalNote}
+                            <br />
+                            Coaching Decision:
+                            <input
+                              onChange={(e, id) =>
+                                this.handleChange(e, athlete._id)
+                              }
+                              name="coachingDecision"
+                              type="text"
+                              defaultValue={athlete.coachingDecision}
+                            />
+                            <br />
+                          </p>
+                        </div>
+                        <button onClick={this.handleFormSubmit}>Submit</button>
+                        <button onClick={id => this.deleteAthlete(athlete._id)}>
+                          Delete
+                        </button>
                       </div>
                     </div>
                   </div>
@@ -278,9 +397,10 @@ class AthleteList extends Component {
         </div>
       );
     } else {
-      return (
-        <h1>Hello world</h1>
-        /* <div>
+      return {
+        /* <h1>Hello world</h1> */
+      };
+      /* <div>
           <div className="card">
             {true &&
               this.state.listOfAthletes.map((athlete, index) => {
@@ -312,7 +432,6 @@ class AthleteList extends Component {
               })}
           </div>
         </div> */
-      );
     }
   }
 }
