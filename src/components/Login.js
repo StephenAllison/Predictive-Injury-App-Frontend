@@ -31,6 +31,13 @@ class Login extends Component {
       .catch(error => console.log(error));
   };
 
+  componentDidMount() {
+    const isLoggedIn = localStorage.getItem("userData");
+    if (isLoggedIn) {
+      this.props.history.push("/athletes");
+    }
+  }
+
   handleChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
