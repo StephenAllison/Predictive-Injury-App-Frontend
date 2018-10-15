@@ -112,9 +112,22 @@ class AthleteList extends Component {
   //Coaching Staff View
   userRenders() {}
 
+  componentWillMount() {
+    const isLoggedIn = localStorage.getItem("userData");
+    console.log("Hello world");
+    if (!isLoggedIn) {
+      window.location = "/";
+    }
+  }
+
   componentDidMount() {
     this.getAllAthletes();
   }
+
+  logoutUser = () => {
+    localStorage.removeItem("userData");
+    this.props.history.push("/");
+  };
 
   deleteAthlete = id => {
     axios.delete(`http://localhost:5000/api/deleteAthlete/${id}`).then(() => {
@@ -127,13 +140,19 @@ class AthleteList extends Component {
   };
 
   render() {
-    console.log("=-=-=-=-=--=-=-=-", this.props);
-
     if (this.props.theUser.staffingDivision === "Coaching Staff") {
       return (
         <div>
           {this.state.message}
           <br />
+          <button
+            onClick={this.logoutUser}
+            style={{
+              float: "right"
+            }}
+          >
+            Logout
+          </button>
           <button onClick={() => this.props.history.push("/createNewAthlete")}>
             Add athlete
           </button>
