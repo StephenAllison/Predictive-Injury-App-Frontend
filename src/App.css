@@ -465,10 +465,26 @@ section {
   margin-right: auto;
 }
 
+.athletes {
+  display: flex;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.athletes,
 .card {
   display: flex;
-  margin-top: 20vh;
-  flex-direction: column;
+  margin: auto;
+  flex-direction: row;
+  flex-wrap: wrap
+}
+
+.card {
+  display: flex;
+  width: 30vw;
+  margin-top: 10vh;
+  flex-direction: row;
   align-items: center;
   border-radius: 5px;
   background-color: #fafafa;
@@ -512,6 +528,23 @@ aside {
   height: 100vh;
   text-align: center;
 
+}
+
+.signupPage {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background-image: url(https://www.nba.com/heat/sites/heat/files/styles/hi_res_images/public/1314_d7_background_140417.jpg?itok=hMkavaIT);
+  display: flex;
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-size: cover;
+  justify-content: center;
+  flex-direction: row;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
 }
 
 Login {

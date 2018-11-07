@@ -154,60 +154,56 @@ class AthleteList extends Component {
             Add athlete
           </button>
           <br />
-          <div>
+          <div class="athletes">
             {this.state.listOfAthletes &&
               this.state.listOfAthletes.map((athlete, index) => {
                 return (
                   // Float Left
-                  <div key={athlete._id}>
-                    <div className="card">
+                  <div className="card" key={athlete._id}>
+                    <div>
+                      <input
+                        onChange={(e, id) => this.handleChange(e, athlete._id)}
+                        name="name"
+                        type="text"
+                        defaultValue={athlete.name}
+                      />
+                      <br />
+                      {/* Injury Status:
+                        <input
+                          type="text"
+                          defaultValue={athlete.currentInjuryStatus} */}
+                      {/* s */}
+                      <br />
+                      <img src={athlete.imgPath} />
                       <div>
+                        Position:
                         <input
                           onChange={(e, id) =>
                             this.handleChange(e, athlete._id)
                           }
-                          name="name"
+                          name="position"
                           type="text"
-                          defaultValue={athlete.name}
+                          defaultValue={athlete.position}
                         />
-                        <br />
-                        {/* Injury Status:
-                        <input
-                          type="text"
-                          defaultValue={athlete.currentInjuryStatus} */}
-                        {/* s */}
-                        <br />
-                        <img src={athlete.imgPath} />
-                        <div>
-                          Position:
+                        <p>
+                          Medical Note :{athlete.medicalNote}
+                          <br />
+                          Coaching Decision:
                           <input
                             onChange={(e, id) =>
                               this.handleChange(e, athlete._id)
                             }
-                            name="position"
+                            name="coachingDecision"
                             type="text"
-                            defaultValue={athlete.position}
+                            defaultValue={athlete.coachingDecision}
                           />
-                          <p>
-                            Medical Note :{athlete.medicalNote}
-                            <br />
-                            Coaching Decision:
-                            <input
-                              onChange={(e, id) =>
-                                this.handleChange(e, athlete._id)
-                              }
-                              name="coachingDecision"
-                              type="text"
-                              defaultValue={athlete.coachingDecision}
-                            />
-                            <br />
-                          </p>
-                        </div>
-                        <button onClick={this.handleFormSubmit}>Submit</button>
-                        <button onClick={id => this.deleteAthlete(athlete._id)}>
-                          Delete
-                        </button>
+                          <br />
+                        </p>
                       </div>
+                      <button onClick={this.handleFormSubmit}>Submit</button>
+                      <button onClick={id => this.deleteAthlete(athlete._id)}>
+                        Delete
+                      </button>
                     </div>
                   </div>
                 );
@@ -223,22 +219,23 @@ class AthleteList extends Component {
       console.log(this.state);
       return (
         <div>
-          <div>
+          <button
+            onClick={this.logoutUser}
+            style={{
+              float: "right"
+            }}
+          >
+            Logout
+          </button>
+          <div class="athletes">
             {this.state.listOfAthletes &&
               this.state.listOfAthletes.map((athlete, index) => {
                 return (
                   // Float Left
-                  <div className="card">
-                    <div key={athlete._id}>
+                  <div className="Card">
+                    <div className="card" key={athlete._id}>
                       <div>
-                        <input
-                          onChange={(e, id) =>
-                            this.handleChange(e, athlete._id)
-                          }
-                          name="name"
-                          type="text"
-                          defaultValue={athlete.name}
-                        />
+                        {athlete.name}
                         <br />
                         {/* Injury Status:
                         <input
@@ -248,15 +245,8 @@ class AthleteList extends Component {
                         <br />
                         <img src={athlete.imgPath} />
                         <div>
-                          Position:
-                          <input
-                            onChange={(e, id) =>
-                              this.handleChange(e, athlete._id)
-                            }
-                            name="position"
-                            type="text"
-                            defaultValue={athlete.position}
-                          />
+                          {athlete.position}
+                          <br />
                           <p>
                             Current Injury Status:
                             <input
@@ -267,6 +257,7 @@ class AthleteList extends Component {
                               type="text"
                               defaultValue={athlete.currentInjuryStatus}
                             />
+                            <br />
                             Physical Mediating Factor Score:
                             <input
                               onChange={(e, id) =>
@@ -278,6 +269,7 @@ class AthleteList extends Component {
                                 athlete.physicalMediatingFactorScore
                               }
                             />
+                            <br />
                             Psychological Mediating FactorScore:
                             <input
                               onChange={(e, id) =>
@@ -289,6 +281,7 @@ class AthleteList extends Component {
                                 athlete.psychologicalMediatingFactorScore
                               }
                             />
+                            <br />
                             Social Mediating Factor Score:{" "}
                             <input
                               onChange={(e, id) =>
@@ -298,6 +291,7 @@ class AthleteList extends Component {
                               type="text"
                               defaultValue={athlete.socialMediatingFactorScore}
                             />
+                            <br />
                             Physical Moderating FactorScore:
                             <input
                               onChange={(e, id) =>
@@ -309,6 +303,7 @@ class AthleteList extends Component {
                                 athlete.physicalModeratingFactorScore
                               }
                             />
+                            <br />
                             Psychological Moderating Factor Score:{" "}
                             <input
                               onChange={(e, id) =>
@@ -320,6 +315,7 @@ class AthleteList extends Component {
                                 athlete.psychologicalModeratingFactorScore
                               }
                             />
+                            <br />
                             socialModeratingFactorScore:
                             <input
                               onChange={(e, id) =>
@@ -370,24 +366,21 @@ class AthleteList extends Component {
                               defaultValue={athlete.injuryRiskScore}
                             />
                             <br />
-                            Medical Note :{athlete.medicalNote}
-                            <br />
-                            Coaching Decision:
+                            Medical Note:
                             <input
                               onChange={(e, id) =>
                                 this.handleChange(e, athlete._id)
                               }
-                              name="coachingDecision"
+                              name="medicalNote"
                               type="text"
-                              defaultValue={athlete.coachingDecision}
+                              defaultValue={athlete.medicalNote}
                             />
+                            <br />
+                            Coaching Decision :{athlete.coachingDecision}
                             <br />
                           </p>
                         </div>
                         <button onClick={this.handleFormSubmit}>Submit</button>
-                        <button onClick={id => this.deleteAthlete(athlete._id)}>
-                          Delete
-                        </button>
                       </div>
                     </div>
                   </div>

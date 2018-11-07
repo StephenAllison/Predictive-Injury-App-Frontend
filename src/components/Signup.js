@@ -74,24 +74,74 @@ class Signup extends Component {
 
   render() {
     return (
-      <div>
+      <div className="signupPage">
         <form onSubmit={this.handleFormSubmit}>
           <label>Image:</label>
+          <br />
           <input
             type="file"
             name="imgPath"
             onChange={e => this.handleChange(e)}
           />{" "}
           <br />
+          <br />
           <label>Sport:</label>
+          <br />
           <input
             type="text"
             name="sport"
             value={this.state.sport}
             onChange={e => this.handleChange(e)}
           />
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">SPORT</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Basketball</option>
+              <option>Soccer</option>
+              <option>Football</option>
+              <option>Hockey</option>
+              <option>Baseball</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">LEAGUE</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>NBA</option>
+              <option>PREMIER</option>
+              <option>NFL</option>
+              <option>NHL</option>
+              <option>MLB</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">STAFFING DIVISION</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>COACHING STAFF</option>
+              <option>MEDICAL STAFF</option>
+              <option>EXECUTIVE STAFF</option>
+            </select>
+          </div>
+          <br />
+          <br />
+          <div class="form-group">
+            <label for="exampleFormControlSelect1">ROLE</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>HEAD COACH</option>
+              <option>ASSISTANT COACH</option>
+              <option>ATHLETIC TRAINER</option>
+              <option>TEAM PHYSICIAN</option>
+              <option>GENERAL MANAGER</option>
+              <option>TEAM PRESIDENT</option>
+            </select>
+          </div>
+          <br />
           <br />
           <label>League:</label>
+          <br />
           <input
             type="text"
             name="league"
@@ -99,7 +149,9 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Team:</label>
+          <br />
           <input
             type="text"
             name="team"
@@ -107,7 +159,9 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Staffing Division:</label>
+          <br />
           <input
             type="text"
             name="staffingDivision"
@@ -115,7 +169,9 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Role:</label>
+          <br />
           <input
             type="text"
             name="role"
@@ -123,7 +179,9 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Name:</label>
+          <br />
           <input
             type="text"
             name="name"
@@ -131,7 +189,9 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Username:</label>
+          <br />
           <input
             type="text"
             name="username"
@@ -139,17 +199,18 @@ class Signup extends Component {
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <label>Password:</label>
+          <br />
           <input
             name="password"
             value={this.state.password}
             onChange={e => this.handleChange(e)}
           />
           <br />
+          <br />
           <input type="submit" value="Signup" />
         </form>
-
-        <Link to={"/signup"}> Signup</Link>
       </div>
     );
   }
