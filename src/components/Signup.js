@@ -121,8 +121,6 @@ class Signup extends Component {
               <option sport="hockey">Hockey</option>
               <option sport="baseball">Baseball</option>
             </select>
-            <p />
-            <p>{this.state.sport}</p>
           </div>
           <br />
           <br />
