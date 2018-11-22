@@ -72,6 +72,19 @@ class Signup extends Component {
     this.setState({ [name]: value });
   };
 
+  //   <select
+  //   key={id}
+  //   name={'document-'+ id}
+  //   value={selectedValue}
+  //   onChange = {(e) => this.saveSelectValue(e, id)}
+  // >
+  //   <option value="0">Please Select</option>
+  //   <option value="1">Australia</option>
+  //   <option value="2">France</option>
+  //   <option value="3">United Kingdom</option>
+  //   <option value="4">United States</option>
+  // </select>
+
   render() {
     return (
       <div className="signupPage">
@@ -85,23 +98,31 @@ class Signup extends Component {
           />{" "}
           <br />
           <br />
-          <label>Sport:</label>
+          {/* <label>Sport:</label>
           <br />
           <input
             type="text"
             name="sport"
             value={this.state.sport}
             onChange={e => this.handleChange(e)}
-          />
+          /> */}
           <div class="form-group">
-            <label for="exampleFormControlSelect1">SPORT</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Basketball</option>
-              <option>Soccer</option>
-              <option>Football</option>
-              <option>Hockey</option>
-              <option>Baseball</option>
+            <label for="sport">SPORT</label>
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              name="sport"
+              value={this.state.sport}
+              onChange={e => this.handleChange(e)}
+            >
+              <option sport="basketball">Basketball</option>
+              <option sport="soccer">Soccer</option>
+              <option sport="football">Football</option>
+              <option sport="hockey">Hockey</option>
+              <option sport="baseball">Baseball</option>
             </select>
+            <p />
+            <p>{this.state.sport}</p>
           </div>
           <br />
           <br />
@@ -119,7 +140,13 @@ class Signup extends Component {
           <br />
           <div class="form-group">
             <label for="exampleFormControlSelect1">STAFFING DIVISION</label>
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select
+              class="form-control"
+              id="exampleFormControlSelect1"
+              name="staffingDivision"
+              value={this.state.staffingDivision}
+              onChange={e => this.handleChange(e)}
+            >
               <option>COACHING STAFF</option>
               <option>MEDICAL STAFF</option>
               <option>EXECUTIVE STAFF</option>
@@ -138,9 +165,7 @@ class Signup extends Component {
               <option>TEAM PRESIDENT</option>
             </select>
           </div>
-          <br />
-          <br />
-          <label>League:</label>
+          {/* <label>League:</label>
           <br />
           <input
             type="text"
@@ -177,7 +202,7 @@ class Signup extends Component {
             name="role"
             value={this.state.role}
             onChange={e => this.handleChange(e)}
-          />
+          /> */}
           <br />
           <br />
           <label>Name:</label>
